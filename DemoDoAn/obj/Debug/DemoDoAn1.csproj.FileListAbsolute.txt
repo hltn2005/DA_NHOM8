@@ -1,0 +1,12 @@
+C:\ThaoVy\DemoDoAn\DemoDoAn\bin\Debug\DemoDoAn.exe.config
+C:\ThaoVy\DemoDoAn\DemoDoAn\bin\Debug\DemoDoAn.exe
+C:\ThaoVy\DemoDoAn\DemoDoAn\bin\Debug\DemoDoAn.pdb
+C:\ThaoVy\DemoDoAn\DemoDoAn\obj\Debug\DemoDoAn1.csproj.AssemblyReference.cache
+C:\ThaoVy\DemoDoAn\DemoDoAn\obj\Debug\DemoDoAn.MainForm.resources
+C:\ThaoVy\DemoDoAn\DemoDoAn\obj\Debug\DemoDoAn.PlaylistFrom.resources
+C:\ThaoVy\DemoDoAn\DemoDoAn\obj\Debug\DemoDoAn.PlaylistManagerForm.resources
+C:\ThaoVy\DemoDoAn\DemoDoAn\obj\Debug\DemoDoAn.Properties.Resources.resources
+C:\ThaoVy\DemoDoAn\DemoDoAn\obj\Debug\DemoDoAn1.csproj.GenerateResource.cache
+C:\ThaoVy\DemoDoAn\DemoDoAn\obj\Debug\DemoDoAn1.csproj.CoreCompileInputs.cache
+C:\ThaoVy\DemoDoAn\DemoDoAn\obj\Debug\DemoDoAn.exe
+C:\ThaoVy\DemoDoAn\DemoDoAn\obj\Debug\DemoDoAn.pdb
