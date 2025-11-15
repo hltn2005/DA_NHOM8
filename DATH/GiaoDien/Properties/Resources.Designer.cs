@@ -63,6 +63,16 @@ namespace GiaoDien.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap DefaultMusicIcon {
+            get {
+                object obj = ResourceManager.GetObject("DefaultMusicIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ManagePlaylist {
             get {
                 object obj = ResourceManager.GetObject("ManagePlaylist", resourceCulture);
@@ -96,6 +106,16 @@ namespace GiaoDien.Properties {
         internal static System.Drawing.Bitmap OpenPlaylist {
             get {
                 object obj = ResourceManager.GetObject("OpenPlaylist", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Pause {
+            get {
+                object obj = ResourceManager.GetObject("Pause", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
