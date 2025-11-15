@@ -1,0 +1,12 @@
+C:\ThaoVy\DoAnTinHoc\GiaoDien\GiaoDien\bin\Debug\GiaoDien.exe.config
+C:\ThaoVy\DoAnTinHoc\GiaoDien\GiaoDien\bin\Debug\GiaoDien.exe
+C:\ThaoVy\DoAnTinHoc\GiaoDien\GiaoDien\bin\Debug\GiaoDien.pdb
+C:\ThaoVy\DoAnTinHoc\GiaoDien\GiaoDien\obj\Debug\GiaoDien.csproj.AssemblyReference.cache
+C:\ThaoVy\DoAnTinHoc\GiaoDien\GiaoDien\obj\Debug\GiaoDien.MainForm.resources
+C:\ThaoVy\DoAnTinHoc\GiaoDien\GiaoDien\obj\Debug\GiaoDien.PlaylistForm.resources
+C:\ThaoVy\DoAnTinHoc\GiaoDien\GiaoDien\obj\Debug\GiaoDien.PlaylistManagerForm.resources
+C:\ThaoVy\DoAnTinHoc\GiaoDien\GiaoDien\obj\Debug\GiaoDien.Properties.Resources.resources
+C:\ThaoVy\DoAnTinHoc\GiaoDien\GiaoDien\obj\Debug\GiaoDien.csproj.GenerateResource.cache
+C:\ThaoVy\DoAnTinHoc\GiaoDien\GiaoDien\obj\Debug\GiaoDien.csproj.CoreCompileInputs.cache
+C:\ThaoVy\DoAnTinHoc\GiaoDien\GiaoDien\obj\Debug\GiaoDien.exe
+C:\ThaoVy\DoAnTinHoc\GiaoDien\GiaoDien\obj\Debug\GiaoDien.pdb
