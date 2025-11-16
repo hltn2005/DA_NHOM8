@@ -79,10 +79,15 @@ namespace GiaoDien
                 btnPause.Visible = false;
                 btnPlay.Visible = true;
             }
+            if(axWMP.playState == WMPLib.WMPPlayState.wmppsMediaEnded)
+            {
+                LoadSong(songList.NextSong());
+                axWMP.Ctlcontrols.play();
+            }
         }
         private void btnPlaylist_Click(object sender, EventArgs e)
         {
-            PlaylistForm xemPlaylist = new PlaylistForm();
+            PlaylistForm xemPlaylist = new PlaylistForm(songList);
             xemPlaylist.Show();
         }
 
@@ -111,21 +116,23 @@ namespace GiaoDien
         private void btnNext_Click(object sender, EventArgs e)
         {
 
-            LoadSong(songList.NextSong());
-            if (axWMP.playState == WMPLib.WMPPlayState.wmppsPlaying)
-                axWMP.Ctlcontrols.pause();
-            else
+            bool isPlaying = (axWMP.playState == WMPLib.WMPPlayState.wmppsPlaying);
+            LoadSong(songList.PrevSong());
+            if (isPlaying)
                 axWMP.Ctlcontrols.play();
+            else
+                axWMP.Ctlcontrols.pause();
 
         }
 
         private void btnPrevious_Click(object sender, EventArgs e)
         {
+            bool isPlaying = (axWMP.playState == WMPLib.WMPPlayState.wmppsPlaying);
             LoadSong(songList.PrevSong());
-            if (axWMP.playState == WMPLib.WMPPlayState.wmppsPlaying)
-                axWMP.Ctlcontrols.pause();
-            else
+            if (isPlaying)
                 axWMP.Ctlcontrols.play();
+            else 
+                axWMP.Ctlcontrols.pause();
 
         }
 

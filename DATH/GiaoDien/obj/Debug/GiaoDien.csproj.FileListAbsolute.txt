@@ -32,3 +32,4 @@ D:\DOANTINHOC\DA_NHOM8\DATH\GiaoDien\obj\Debug\Interop.WMPLib.dll
 D:\DOANTINHOC\DA_NHOM8\DATH\GiaoDien\obj\Debug\AxInterop.WMPLib.dll
 D:\DOANTINHOC\DA_NHOM8\DATH\GiaoDien\obj\Debug\GiaoDien.csproj.ResolveComReference.cache
 D:\DOANTINHOC\DA_NHOM8\DATH\GiaoDien\obj\Debug\GiaoDien.csproj.Up2Date
+D:\DOANTINHOC\DA_NHOM8\DATH\GiaoDien\obj\Debug\GiaoDien.AddSongForm.resources

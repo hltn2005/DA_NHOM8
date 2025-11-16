@@ -12,9 +12,11 @@ namespace GiaoDien
 {
 	public partial class PlaylistForm : Form
 	{
-		public PlaylistForm()
+		DoubleLinkedList.DoubleLinkedListSong songList;
+		public PlaylistForm(DoubleLinkedList.DoubleLinkedListSong list)
 		{
 			InitializeComponent();
+			songList = list;
 		}
 
 		private void btnPlaylistManager2_Click(object sender, EventArgs e)
@@ -22,5 +24,11 @@ namespace GiaoDien
 			PlaylistManagerForm qlPlaylist = new PlaylistManagerForm();
 			qlPlaylist.ShowDialog();
 		}
-	}
+
+        private void btnAddSong_Click(object sender, EventArgs e)
+        {
+			AddSongForm addSongForm = new AddSongForm(songList);
+			addSongForm.ShowDialog();
+        }
+    }
 }

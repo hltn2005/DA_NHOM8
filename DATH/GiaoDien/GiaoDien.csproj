@@ -49,6 +49,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddSongForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddSongForm.Designer.cs">
+      <DependentUpon>AddSongForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DoubleLinkedList.cs" />
     <Compile Include="LoadFileForm.cs">
       <SubType>Form</SubType>
@@ -76,6 +82,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Song.cs" />
+    <EmbeddedResource Include="AddSongForm.resx">
+      <DependentUpon>AddSongForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoadFileForm.resx">
       <DependentUpon>LoadFileForm.cs</DependentUpon>
     </EmbeddedResource>
