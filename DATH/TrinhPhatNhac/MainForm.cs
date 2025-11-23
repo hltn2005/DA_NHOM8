@@ -238,8 +238,15 @@ namespace TrinhPhatNhac
             if (Properties.Settings.Default.SongFolderPath != null)
             {
                 string folderPath = Properties.Settings.Default.SongFolderPath;
-                if (folderPath != null)
+                if (string.IsNullOrEmpty(folderPath)||!System.IO.Directory.Exists(folderPath))
                 {
+                    MessageBox.Show("Đường dẫn file nhạc bị lỗi. " +
+                        "Hãy thêm lại đường dẫn ở mục menu.", "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+
                     string[] files = Directory.GetFiles(folderPath, "*.mp3");
                     if (files.Length > 0)
                     {
@@ -250,12 +257,6 @@ namespace TrinhPhatNhac
                         LoadSong(pathList);
                         songLinkedList.ResetSong();
                     }
-                }
-                else
-                {
-                    MessageBox.Show("Đường dẫn file nhạc bị lỗi. " +
-                        "Hãy thêm lại đường dẫn ở mục menu.", "Thông báo",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else

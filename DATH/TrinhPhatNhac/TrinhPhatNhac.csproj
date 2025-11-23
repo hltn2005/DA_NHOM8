@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>GiaoDien</RootNamespace>
-    <AssemblyName>GiaoDien</AssemblyName>
+    <RootNamespace>TrinhPhatNhac</RootNamespace>
+    <AssemblyName>TrinhPhatNhac</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

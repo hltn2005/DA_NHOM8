@@ -3,75 +3,76 @@
   "WorkspaceRootPath": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|GiaoDien\\TrinhPhatNhac.csproj|d:\\doantinhoc\\da_nhom8\\dath\\giaodien\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|GiaoDien\\TrinhPhatNhac.csproj|solutionrelative:giaodien\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|TrinhPhatNhac\\TrinhPhatNhac.csproj|D:\\DOANTINHOC\\DA_NHOM8\\DATH\\trinhphatnhac\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|TrinhPhatNhac\\TrinhPhatNhac.csproj|solutionrelative:trinhphatnhac\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|GiaoDien\\TrinhPhatNhac.csproj|D:\\DOANTINHOC\\DA_NHOM8\\DATH\\giaodien\\loadfileform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|GiaoDien\\TrinhPhatNhac.csproj|solutionrelative:giaodien\\loadfileform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|TrinhPhatNhac\\TrinhPhatNhac.csproj|D:\\DOANTINHOC\\DA_NHOM8\\DATH\\trinhphatnhac\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|TrinhPhatNhac\\TrinhPhatNhac.csproj|solutionrelative:trinhphatnhac\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|GiaoDien\\GiaoDien.csproj|D:\\DOANTINHOC\\DA_NHOM8\\DATH\\giaodien\\loadfileform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|GiaoDien\\GiaoDien.csproj|solutionrelative:giaodien\\loadfileform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|TrinhPhatNhac\\TrinhPhatNhac.csproj|D:\\DOANTINHOC\\DA_NHOM8\\DATH\\trinhphatnhac\\mainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|TrinhPhatNhac\\TrinhPhatNhac.csproj|solutionrelative:trinhphatnhac\\mainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|GiaoDien\\TrinhPhatNhac.csproj|D:\\DOANTINHOC\\DA_NHOM8\\DATH\\giaodien\\loadfileform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|GiaoDien\\TrinhPhatNhac.csproj|solutionrelative:giaodien\\loadfileform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|TrinhPhatNhac\\TrinhPhatNhac.csproj|D:\\DOANTINHOC\\DA_NHOM8\\DATH\\trinhphatnhac\\playlistmanagerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|TrinhPhatNhac\\TrinhPhatNhac.csproj|solutionrelative:trinhphatnhac\\playlistmanagerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|GiaoDien\\GiaoDien.csproj|D:\\DOANTINHOC\\DA_NHOM8\\DATH\\giaodien\\loadfileform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|GiaoDien\\GiaoDien.csproj|solutionrelative:giaodien\\loadfileform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|TrinhPhatNhac\\TrinhPhatNhac.csproj|D:\\DOANTINHOC\\DA_NHOM8\\DATH\\trinhphatnhac\\playlistform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|TrinhPhatNhac\\TrinhPhatNhac.csproj|solutionrelative:trinhphatnhac\\playlistform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|GiaoDien\\TrinhPhatNhac.csproj|D:\\DOANTINHOC\\DA_NHOM8\\DATH\\giaodien\\loadfileform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|GiaoDien\\TrinhPhatNhac.csproj|solutionrelative:giaodien\\loadfileform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|TrinhPhatNhac\\TrinhPhatNhac.csproj|D:\\DOANTINHOC\\DA_NHOM8\\DATH\\trinhphatnhac\\song.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|TrinhPhatNhac\\TrinhPhatNhac.csproj|solutionrelative:trinhphatnhac\\song.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|GiaoDien\\TrinhPhatNhac.csproj|D:\\DOANTINHOC\\DA_NHOM8\\DATH\\giaodien\\addsongform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|GiaoDien\\TrinhPhatNhac.csproj|solutionrelative:giaodien\\addsongform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|TrinhPhatNhac\\TrinhPhatNhac.csproj|D:\\DOANTINHOC\\DA_NHOM8\\DATH\\trinhphatnhac\\properties\\resources.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|TrinhPhatNhac\\TrinhPhatNhac.csproj|solutionrelative:trinhphatnhac\\properties\\resources.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|GiaoDien\\GiaoDien.csproj|D:\\DOANTINHOC\\DA_NHOM8\\DATH\\giaodien\\addsongform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|GiaoDien\\GiaoDien.csproj|solutionrelative:giaodien\\addsongform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|TrinhPhatNhac\\TrinhPhatNhac.csproj|D:\\DOANTINHOC\\DA_NHOM8\\DATH\\trinhphatnhac\\loadfileform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|TrinhPhatNhac\\TrinhPhatNhac.csproj|solutionrelative:trinhphatnhac\\loadfileform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|GiaoDien\\TrinhPhatNhac.csproj|D:\\DOANTINHOC\\DA_NHOM8\\DATH\\giaodien\\doublelinkedlistfilesong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|GiaoDien\\TrinhPhatNhac.csproj|solutionrelative:giaodien\\doublelinkedlistfilesong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|TrinhPhatNhac\\TrinhPhatNhac.csproj|D:\\DOANTINHOC\\DA_NHOM8\\DATH\\trinhphatnhac\\addsongform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|TrinhPhatNhac\\TrinhPhatNhac.csproj|solutionrelative:trinhphatnhac\\addsongform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|GiaoDien\\GiaoDien.csproj|D:\\DOANTINHOC\\DA_NHOM8\\DATH\\giaodien\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|GiaoDien\\GiaoDien.csproj|solutionrelative:giaodien\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|TrinhPhatNhac\\TrinhPhatNhac.csproj|D:\\DOANTINHOC\\DA_NHOM8\\DATH\\trinhphatnhac\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|TrinhPhatNhac\\TrinhPhatNhac.csproj|solutionrelative:trinhphatnhac\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|GiaoDien\\GiaoDien.csproj|D:\\DOANTINHOC\\DA_NHOM8\\DATH\\giaodien\\playlistform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|GiaoDien\\GiaoDien.csproj|solutionrelative:giaodien\\playlistform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|TrinhPhatNhac\\TrinhPhatNhac.csproj|D:\\DOANTINHOC\\DA_NHOM8\\DATH\\trinhphatnhac\\playlistform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|TrinhPhatNhac\\TrinhPhatNhac.csproj|solutionrelative:trinhphatnhac\\playlistform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|GiaoDien\\GiaoDien.csproj|D:\\DOANTINHOC\\DA_NHOM8\\DATH\\giaodien\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|GiaoDien\\GiaoDien.csproj|solutionrelative:giaodien\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|TrinhPhatNhac\\TrinhPhatNhac.csproj|D:\\DOANTINHOC\\DA_NHOM8\\DATH\\trinhphatnhac\\linkedlistfilepath.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|TrinhPhatNhac\\TrinhPhatNhac.csproj|solutionrelative:trinhphatnhac\\linkedlistfilepath.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|GiaoDien\\GiaoDien.csproj|D:\\DOANTINHOC\\DA_NHOM8\\DATH\\giaodien\\playlistform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|GiaoDien\\GiaoDien.csproj|solutionrelative:giaodien\\playlistform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|TrinhPhatNhac\\TrinhPhatNhac.csproj|D:\\DOANTINHOC\\DA_NHOM8\\DATH\\trinhphatnhac\\doublelinkedlistfilesong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|TrinhPhatNhac\\TrinhPhatNhac.csproj|solutionrelative:trinhphatnhac\\doublelinkedlistfilesong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|GiaoDien\\GiaoDien.csproj|D:\\DOANTINHOC\\DA_NHOM8\\DATH\\giaodien\\addsongform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|GiaoDien\\GiaoDien.csproj|solutionrelative:giaodien\\addsongform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|TrinhPhatNhac\\TrinhPhatNhac.csproj|D:\\DOANTINHOC\\DA_NHOM8\\DATH\\trinhphatnhac\\addsongform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|TrinhPhatNhac\\TrinhPhatNhac.csproj|solutionrelative:trinhphatnhac\\addsongform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|GiaoDien\\GiaoDien.csproj|D:\\DOANTINHOC\\DA_NHOM8\\DATH\\giaodien\\linkedlistfilepath.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|GiaoDien\\GiaoDien.csproj|solutionrelative:giaodien\\linkedlistfilepath.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|TrinhPhatNhac\\TrinhPhatNhac.csproj|D:\\DOANTINHOC\\DA_NHOM8\\DATH\\trinhphatnhac\\playlistmanagerform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|TrinhPhatNhac\\TrinhPhatNhac.csproj|solutionrelative:trinhphatnhac\\playlistmanagerform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|GiaoDien\\GiaoDien.csproj|D:\\DOANTINHOC\\DA_NHOM8\\DATH\\giaodien\\song.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|GiaoDien\\GiaoDien.csproj|solutionrelative:giaodien\\song.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|TrinhPhatNhac\\TrinhPhatNhac.csproj|D:\\DOANTINHOC\\DA_NHOM8\\DATH\\trinhphatnhac\\loadfileform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|TrinhPhatNhac\\TrinhPhatNhac.csproj|solutionrelative:trinhphatnhac\\loadfileform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nhan\\Downloads\\Form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|TrinhPhatNhac\\TrinhPhatNhac.csproj|D:\\DOANTINHOC\\DA_NHOM8\\DATH\\trinhphatnhac\\playlistform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|TrinhPhatNhac\\TrinhPhatNhac.csproj|solutionrelative:trinhphatnhac\\playlistform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|GiaoDien\\GiaoDien.csproj|D:\\DOANTINHOC\\DA_NHOM8\\DATH\\giaodien\\loadfileform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|GiaoDien\\GiaoDien.csproj|solutionrelative:giaodien\\loadfileform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|TrinhPhatNhac\\TrinhPhatNhac.csproj|D:\\DOANTINHOC\\DA_NHOM8\\DATH\\trinhphatnhac\\loadfileform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{CCBEEA40-7D73-4850-98FE-E58A1CE715A6}|TrinhPhatNhac\\TrinhPhatNhac.csproj|solutionrelative:trinhphatnhac\\loadfileform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -94,211 +95,231 @@
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "LoadFileForm.Designer.cs",
-              "DocumentMoniker": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\GiaoDien\\LoadFileForm.Designer.cs",
-              "RelativeDocumentMoniker": "GiaoDien\\LoadFileForm.Designer.cs",
-              "ToolTip": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\GiaoDien\\LoadFileForm.Designer.cs",
-              "RelativeToolTip": "GiaoDien\\LoadFileForm.Designer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAuAAAAAAAAAA==",
+              "Title": "Song.cs",
+              "DocumentMoniker": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\TrinhPhatNhac\\Song.cs",
+              "RelativeDocumentMoniker": "TrinhPhatNhac\\Song.cs",
+              "ToolTip": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\TrinhPhatNhac\\Song.cs",
+              "RelativeToolTip": "TrinhPhatNhac\\Song.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T14:50:42.679Z"
+              "WhenOpened": "2025-11-23T15:35:23.871Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "LoadFileForm.cs [Design]",
-              "DocumentMoniker": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\GiaoDien\\LoadFileForm.cs",
-              "RelativeDocumentMoniker": "GiaoDien\\LoadFileForm.cs",
-              "ToolTip": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\GiaoDien\\LoadFileForm.cs [Design]",
-              "RelativeToolTip": "GiaoDien\\LoadFileForm.cs [Design]",
+              "DocumentIndex": 2,
+              "Title": "MainForm.Designer.cs",
+              "DocumentMoniker": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\TrinhPhatNhac\\MainForm.Designer.cs",
+              "RelativeDocumentMoniker": "TrinhPhatNhac\\MainForm.Designer.cs",
+              "ToolTip": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\TrinhPhatNhac\\MainForm.Designer.cs",
+              "RelativeToolTip": "TrinhPhatNhac\\MainForm.Designer.cs",
+              "ViewState": "AgIAAJQAAAAAAAAAAAAIwJ4AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T14:50:44.981Z"
+              "WhenOpened": "2025-11-23T15:21:52.71Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "LoadFileForm.cs",
-              "DocumentMoniker": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\GiaoDien\\LoadFileForm.cs",
-              "RelativeDocumentMoniker": "GiaoDien\\LoadFileForm.cs",
-              "ToolTip": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\GiaoDien\\LoadFileForm.cs",
-              "RelativeToolTip": "GiaoDien\\LoadFileForm.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAwA4AAAAsAAAAAAAAAA==",
+              "Title": "MainForm.cs [Design]",
+              "DocumentMoniker": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\TrinhPhatNhac\\MainForm.cs",
+              "RelativeDocumentMoniker": "TrinhPhatNhac\\MainForm.cs",
+              "ToolTip": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\TrinhPhatNhac\\MainForm.cs [Design]",
+              "RelativeToolTip": "TrinhPhatNhac\\MainForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T14:50:44.993Z"
+              "WhenOpened": "2025-11-23T15:21:38.488Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "MainForm.cs",
-              "DocumentMoniker": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\GiaoDien\\MainForm.cs",
-              "RelativeDocumentMoniker": "GiaoDien\\MainForm.cs",
-              "ToolTip": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\GiaoDien\\MainForm.cs",
-              "RelativeToolTip": "GiaoDien\\MainForm.cs",
-              "ViewState": "AgIAAOsAAAAAAAAAAAA1wPkAAAArAAAAAAAAAA==",
+              "DocumentMoniker": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\TrinhPhatNhac\\MainForm.cs",
+              "RelativeDocumentMoniker": "TrinhPhatNhac\\MainForm.cs",
+              "ToolTip": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\TrinhPhatNhac\\MainForm.cs",
+              "RelativeToolTip": "TrinhPhatNhac\\MainForm.cs",
+              "ViewState": "AgIAAO8AAAAAAAAAAAAYwPcAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T14:50:45.055Z",
+              "WhenOpened": "2025-11-23T15:33:53.749Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "LoadFileForm.cs [Design]",
-              "DocumentMoniker": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\GiaoDien\\LoadFileForm.cs",
-              "RelativeDocumentMoniker": "GiaoDien\\LoadFileForm.cs",
-              "ToolTip": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\GiaoDien\\LoadFileForm.cs [Design]",
-              "RelativeToolTip": "GiaoDien\\LoadFileForm.cs [Design]",
+              "Title": "PlaylistForm.cs [Design]",
+              "DocumentMoniker": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\TrinhPhatNhac\\PlaylistForm.cs",
+              "RelativeDocumentMoniker": "TrinhPhatNhac\\PlaylistForm.cs",
+              "ToolTip": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\TrinhPhatNhac\\PlaylistForm.cs [Design]",
+              "RelativeToolTip": "TrinhPhatNhac\\PlaylistForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-16T14:57:37.636Z"
+              "WhenOpened": "2025-11-23T15:22:14.222Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "LoadFileForm.cs",
-              "DocumentMoniker": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\GiaoDien\\LoadFileForm.cs",
-              "RelativeDocumentMoniker": "GiaoDien\\LoadFileForm.cs",
-              "ToolTip": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\GiaoDien\\LoadFileForm.cs",
-              "RelativeToolTip": "GiaoDien\\LoadFileForm.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAQwA4AAAAsAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "PlaylistManagerForm.cs [Design]",
+              "DocumentMoniker": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\TrinhPhatNhac\\PlaylistManagerForm.cs",
+              "RelativeDocumentMoniker": "TrinhPhatNhac\\PlaylistManagerForm.cs",
+              "ToolTip": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\TrinhPhatNhac\\PlaylistManagerForm.cs [Design]",
+              "RelativeToolTip": "TrinhPhatNhac\\PlaylistManagerForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-15T14:39:16.397Z"
+              "WhenOpened": "2025-11-23T15:22:36.931Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AddSongForm.cs",
-              "DocumentMoniker": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\GiaoDien\\AddSongForm.cs",
-              "RelativeDocumentMoniker": "GiaoDien\\AddSongForm.cs",
-              "ToolTip": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\GiaoDien\\AddSongForm.cs",
-              "RelativeToolTip": "GiaoDien\\AddSongForm.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABcAAAAgAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "Resources.Designer.cs",
+              "DocumentMoniker": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\TrinhPhatNhac\\Properties\\Resources.Designer.cs",
+              "RelativeDocumentMoniker": "TrinhPhatNhac\\Properties\\Resources.Designer.cs",
+              "ToolTip": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\TrinhPhatNhac\\Properties\\Resources.Designer.cs",
+              "RelativeToolTip": "TrinhPhatNhac\\Properties\\Resources.Designer.cs",
+              "ViewState": "AgIAAJAAAAAAAAAAAAAuwK0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-16T14:58:52.175Z"
+              "WhenOpened": "2025-11-23T15:39:44.033Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\TrinhPhatNhac\\Program.cs",
+              "RelativeDocumentMoniker": "TrinhPhatNhac\\Program.cs",
+              "ToolTip": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\TrinhPhatNhac\\Program.cs",
+              "RelativeToolTip": "TrinhPhatNhac\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T15:35:22.739Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "DoubleLinkedListFileSong.cs",
-              "DocumentMoniker": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\GiaoDien\\DoubleLinkedListFileSong.cs",
-              "RelativeDocumentMoniker": "GiaoDien\\DoubleLinkedListFileSong.cs",
-              "ToolTip": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\GiaoDien\\DoubleLinkedListFileSong.cs",
-              "RelativeToolTip": "GiaoDien\\DoubleLinkedListFileSong.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
+              "Title": "AddSongForm.cs [Design]",
+              "DocumentMoniker": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\TrinhPhatNhac\\AddSongForm.cs",
+              "RelativeDocumentMoniker": "TrinhPhatNhac\\AddSongForm.cs",
+              "ToolTip": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\TrinhPhatNhac\\AddSongForm.cs [Design]",
+              "RelativeToolTip": "TrinhPhatNhac\\AddSongForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T14:03:06.131Z"
+              "WhenOpened": "2025-11-23T15:28:12.275Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "LinkedListFilePath.cs",
+              "DocumentMoniker": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\TrinhPhatNhac\\LinkedListFilePath.cs",
+              "RelativeDocumentMoniker": "TrinhPhatNhac\\LinkedListFilePath.cs",
+              "ToolTip": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\TrinhPhatNhac\\LinkedListFilePath.cs",
+              "RelativeToolTip": "TrinhPhatNhac\\LinkedListFilePath.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T15:34:34.86Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "LoadFileForm.cs",
+              "DocumentMoniker": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\TrinhPhatNhac\\LoadFileForm.cs",
+              "RelativeDocumentMoniker": "TrinhPhatNhac\\LoadFileForm.cs",
+              "ToolTip": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\TrinhPhatNhac\\LoadFileForm.cs",
+              "RelativeToolTip": "TrinhPhatNhac\\LoadFileForm.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAwBEAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T15:35:00.374Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
               "Title": "PlaylistForm.cs",
-              "DocumentMoniker": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\GiaoDien\\PlaylistForm.cs",
-              "RelativeDocumentMoniker": "GiaoDien\\PlaylistForm.cs",
-              "ToolTip": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\GiaoDien\\PlaylistForm.cs",
-              "RelativeToolTip": "GiaoDien\\PlaylistForm.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAAuAAAAAAAAAA==",
+              "DocumentMoniker": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\TrinhPhatNhac\\PlaylistForm.cs",
+              "RelativeDocumentMoniker": "TrinhPhatNhac\\PlaylistForm.cs",
+              "ToolTip": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\TrinhPhatNhac\\PlaylistForm.cs",
+              "RelativeToolTip": "TrinhPhatNhac\\PlaylistForm.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAYwBQAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-16T14:21:15.593Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AddSongForm.cs",
-              "DocumentMoniker": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\GiaoDien\\AddSongForm.cs",
-              "RelativeDocumentMoniker": "GiaoDien\\AddSongForm.cs",
-              "ToolTip": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\GiaoDien\\AddSongForm.cs",
-              "RelativeToolTip": "GiaoDien\\AddSongForm.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T14:50:45.146Z"
+              "WhenOpened": "2025-11-23T15:35:17.489Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
-              "Title": "PlaylistForm.cs [Design]",
-              "DocumentMoniker": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\GiaoDien\\PlaylistForm.cs",
-              "RelativeDocumentMoniker": "GiaoDien\\PlaylistForm.cs",
-              "ToolTip": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\GiaoDien\\PlaylistForm.cs [Design]",
-              "RelativeToolTip": "GiaoDien\\PlaylistForm.cs [Design]",
+              "Title": "DoubleLinkedListFileSong.cs",
+              "DocumentMoniker": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\TrinhPhatNhac\\DoubleLinkedListFileSong.cs",
+              "RelativeDocumentMoniker": "TrinhPhatNhac\\DoubleLinkedListFileSong.cs",
+              "ToolTip": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\TrinhPhatNhac\\DoubleLinkedListFileSong.cs",
+              "RelativeToolTip": "TrinhPhatNhac\\DoubleLinkedListFileSong.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-16T14:22:20.21Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "MainForm.cs",
-              "DocumentMoniker": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\GiaoDien\\MainForm.cs",
-              "RelativeDocumentMoniker": "GiaoDien\\MainForm.cs",
-              "ToolTip": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\GiaoDien\\MainForm.cs",
-              "RelativeToolTip": "GiaoDien\\MainForm.cs",
-              "ViewState": "AgIAAFEAAAAAAAAAAAAYwFYAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-15T12:24:43.056Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "MainForm.cs [Design]",
-              "DocumentMoniker": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\GiaoDien\\MainForm.cs",
-              "RelativeDocumentMoniker": "GiaoDien\\MainForm.cs",
-              "ToolTip": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\GiaoDien\\MainForm.cs [Design]",
-              "RelativeToolTip": "GiaoDien\\MainForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-15T14:00:23.666Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "AddSongForm.cs [Design]",
-              "DocumentMoniker": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\GiaoDien\\AddSongForm.cs",
-              "RelativeDocumentMoniker": "GiaoDien\\AddSongForm.cs",
-              "ToolTip": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\GiaoDien\\AddSongForm.cs [Design]",
-              "RelativeToolTip": "GiaoDien\\AddSongForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-16T14:53:31.058Z"
+              "WhenOpened": "2025-11-23T15:34:32.436Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 14,
-              "Title": "LinkedListFilePath.cs",
-              "DocumentMoniker": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\GiaoDien\\LinkedListFilePath.cs",
-              "RelativeDocumentMoniker": "GiaoDien\\LinkedListFilePath.cs",
-              "ToolTip": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\GiaoDien\\LinkedListFilePath.cs",
-              "RelativeToolTip": "GiaoDien\\LinkedListFilePath.cs",
-              "ViewState": "AgIAADYAAAAAAAAAAAAIwEcAAAANAAAAAAAAAA==",
+              "Title": "PlaylistManagerForm.Designer.cs",
+              "DocumentMoniker": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\TrinhPhatNhac\\PlaylistManagerForm.Designer.cs",
+              "RelativeDocumentMoniker": "TrinhPhatNhac\\PlaylistManagerForm.Designer.cs",
+              "ToolTip": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\TrinhPhatNhac\\PlaylistManagerForm.Designer.cs",
+              "RelativeToolTip": "TrinhPhatNhac\\PlaylistManagerForm.Designer.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-15T14:35:47.387Z"
+              "WhenOpened": "2025-11-23T15:28:00.963Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 15,
-              "Title": "Song.cs",
-              "DocumentMoniker": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\GiaoDien\\Song.cs",
-              "RelativeDocumentMoniker": "GiaoDien\\Song.cs",
-              "ToolTip": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\GiaoDien\\Song.cs",
-              "RelativeToolTip": "GiaoDien\\Song.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAYwB8AAAAaAAAAAAAAAA==",
+              "Title": "LoadFileForm.Designer.cs",
+              "DocumentMoniker": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\TrinhPhatNhac\\LoadFileForm.Designer.cs",
+              "RelativeDocumentMoniker": "TrinhPhatNhac\\LoadFileForm.Designer.cs",
+              "ToolTip": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\TrinhPhatNhac\\LoadFileForm.Designer.cs",
+              "RelativeToolTip": "TrinhPhatNhac\\LoadFileForm.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-16T14:22:00.726Z"
+              "WhenOpened": "2025-11-23T15:27:51.313Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "AddSongForm.Designer.cs",
+              "DocumentMoniker": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\TrinhPhatNhac\\AddSongForm.Designer.cs",
+              "RelativeDocumentMoniker": "TrinhPhatNhac\\AddSongForm.Designer.cs",
+              "ToolTip": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\TrinhPhatNhac\\AddSongForm.Designer.cs",
+              "RelativeToolTip": "TrinhPhatNhac\\AddSongForm.Designer.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAAwBQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T15:28:17.025Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 16,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\Nhan\\Downloads\\Form1.cs",
-              "ToolTip": "C:\\Users\\Nhan\\Downloads\\Form1.cs",
+              "Title": "PlaylistForm.Designer.cs",
+              "DocumentMoniker": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\TrinhPhatNhac\\PlaylistForm.Designer.cs",
+              "RelativeDocumentMoniker": "TrinhPhatNhac\\PlaylistForm.Designer.cs",
+              "ToolTip": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\TrinhPhatNhac\\PlaylistForm.Designer.cs",
+              "RelativeToolTip": "TrinhPhatNhac\\PlaylistForm.Designer.cs",
+              "ViewState": "AgIAAIIAAAAAAAAAAAAAwI0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-16T14:50:33.029Z"
+              "WhenOpened": "2025-11-23T15:22:20.693Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 17,
-              "Title": "LoadFileForm.Designer.cs",
-              "DocumentMoniker": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\GiaoDien\\LoadFileForm.Designer.cs",
-              "RelativeDocumentMoniker": "GiaoDien\\LoadFileForm.Designer.cs",
-              "ToolTip": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\GiaoDien\\LoadFileForm.Designer.cs",
-              "RelativeToolTip": "GiaoDien\\LoadFileForm.Designer.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAAADkAAAAAAAAAAAAAAA==",
+              "Title": "LoadFileForm.cs [Design]",
+              "DocumentMoniker": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\TrinhPhatNhac\\LoadFileForm.cs",
+              "RelativeDocumentMoniker": "TrinhPhatNhac\\LoadFileForm.cs",
+              "ToolTip": "D:\\DOANTINHOC\\DA_NHOM8\\DATH\\TrinhPhatNhac\\LoadFileForm.cs [Design]",
+              "RelativeToolTip": "TrinhPhatNhac\\LoadFileForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-15T12:16:03.108Z"
+              "WhenOpened": "2025-11-23T15:22:12.096Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }
