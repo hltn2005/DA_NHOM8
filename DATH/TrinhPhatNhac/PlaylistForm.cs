@@ -28,26 +28,35 @@ namespace TrinhPhatNhac
             dgvPlayList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
         }
+        #region Button
         private void btnPlaylistManager2_Click(object sender, EventArgs e)
         {
-            PlaylistManagerForm qlPlaylist = new PlaylistManagerForm();
+            PlaylistManagerForm qlPlaylist = new PlaylistManagerForm( songListRoot,songList);
             qlPlaylist.ShowDialog();
+            // điều kiện kiểm tra nếu playlist đã chọn rỗng hoặc null thì dgv sẽ không có dữ liệu
+            if (songList == null || songList.Count == 0)
+            {
+                dgvPlayList.DataSource = null;
+                return;
+            }
+            if (qlPlaylist.SelectedPlayList!=null&&qlPlaylist.SelectedPlayList.PlayList.Count>0)
+            {
+                songList.Clear();
+                songList.AddRange(qlPlaylist.SelectedPlayList.PlayList);// addrange thêm nhiều bài hát 1 lần 
+                dgvPlayList.DataSource = null;
+                dgvPlayList.DataSource = songList;// tạo lại data cho dgv
+            }
         }
 
         private void btnAddSong_Click(object sender, EventArgs e)
         {
             AddSongForm newForm = new AddSongForm(songListRoot,songList);
             newForm.ShowDialog();
-            if(newForm.CheckSelect()) 
+            if(newForm.CheckSelect())// nếu danh sách có thêm bài hát mới thì cập nhật lại data cho dgv
             {
                 dgvPlayList.DataSource = null;
                 dgvPlayList.DataSource = songList;
             }
-        }
-
-        private void PlaylistForm_Load(object sender, EventArgs e)
-        {
-            //dgvPlayList.DataSource=currentList.ConvertToList();
         }
 
         private void btnRemoveSong_Click(object sender, EventArgs e)
@@ -66,6 +75,11 @@ namespace TrinhPhatNhac
                     dgvPlayList.DataSource = songList;
                 }
             }
+        }
+        #endregion
+        private void PlaylistForm_Load(object sender, EventArgs e)
+        {
+            //dgvPlayList.DataSource=currentList.ConvertToList();
         }
     }
 }

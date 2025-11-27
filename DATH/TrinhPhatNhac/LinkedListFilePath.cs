@@ -9,6 +9,7 @@ namespace TrinhPhatNhac
 {
     public class LinkedListFilePath
     {
+        #region class PathNode
         public class PathNode
         {
             public string File;
@@ -19,6 +20,8 @@ namespace TrinhPhatNhac
                 Next = null;
             }
         }
+        #endregion
+        #region class LinkedListPath
         public class LinkedListPath
         {
             PathNode head, tail, current;
@@ -26,7 +29,7 @@ namespace TrinhPhatNhac
             {
                 head = tail = current = null;
             }
-            public void AddLast(string file)
+            public void AddLast(string file) // phương thúc thêm cuối path 
             {
                 PathNode newNode = new PathNode(file);
                 if (head == null)
@@ -40,7 +43,7 @@ namespace TrinhPhatNhac
                     tail = newNode;
                 }
             }
-            public string GetCurrentPath()
+            public string GetCurrentPath()// phương thức lấy path hiện tại
             {
                 if (current != null)
                 {
@@ -51,7 +54,7 @@ namespace TrinhPhatNhac
                     return null;
                 }
             }
-            public string NextPath()
+            public string NextPath()// phương thức lấy path kế
             {
                 if (current == null)
                 {
@@ -68,11 +71,12 @@ namespace TrinhPhatNhac
                     return null;
                 }
             }
-            public void ResetPos()
+            public void ResetPos()// phương thức reset Node
             {
                 current = head;
             }
             
         }
+        #endregion
     }
 }

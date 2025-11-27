@@ -51,6 +51,7 @@
             this.Controls.Add(this.btnLoadFile);
             this.Name = "LoadFileForm";
             this.Text = "Trình phát nhạc";
+            this.Load += new System.EventHandler(this.LoadFileForm_Load);
             this.ResumeLayout(false);
 
         }

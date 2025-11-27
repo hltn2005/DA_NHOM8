@@ -16,13 +16,14 @@ namespace TrinhPhatNhac
     public partial class AddSongForm : Form
     {
         List<Song> songListRoot = new List<Song>();
-        List<Song> songList = new List<Song>();
+        List<Song> targetPlayList;
         public bool checkList;
-        public AddSongForm(List<Song> songlistroot,List<Song> songlist)
+
+        public AddSongForm(List<Song> songlistroot,List<Song> playListToUpdate)
         {
             InitializeComponent();
-            songList = songlist;
             songListRoot=songlistroot;
+            targetPlayList=playListToUpdate;
             dgvAddSong.AutoGenerateColumns = false;
             dgvAddSong.DataSource = songlistroot;
             dgvAddSong.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -30,7 +31,7 @@ namespace TrinhPhatNhac
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            List<Song> selectecSong = new List<Song>();
+            int songSelected=0;
             if (dgvAddSong.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Vui lòng chọn bài hát cần thêm hoặc thoát",
@@ -41,24 +42,28 @@ namespace TrinhPhatNhac
             {
                 if(row.DataBoundItem is Song song)
                 {
-                    selectecSong.Add(song);
+                    if(!targetPlayList.Contains(song))
+                    {
+                        targetPlayList.Add(song);
+                        songSelected++;
+                    }
                 }
             }
-            songList.Clear();
-            foreach (var song in selectecSong)
+            if(songSelected>0)
             {
-                songList.Add(song);
+                checkList = true;
             }
-            checkList = true;
+
             this.Close();
         }
         public bool CheckSelect()
         {
-            if (checkList)
-                return true;
-            else
-                return false;
+            return checkList;
         }
-        
+
+        private void AddSongForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

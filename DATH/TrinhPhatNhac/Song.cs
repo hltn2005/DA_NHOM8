@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace TrinhPhatNhac
@@ -14,7 +15,7 @@ namespace TrinhPhatNhac
         private Image image;
         private TimeSpan minute;
         private string filePath;
-        public string SongName
+        public string SongName 
         {
             get { return songName; }
             set { songName = value; }
@@ -29,6 +30,7 @@ namespace TrinhPhatNhac
             get { return filePath; }
             set { filePath = value; }
         }
+        [JsonIgnore]// JsonIgnore: bỏ qua hình ảnh
         public Image Image
         {
             get { return image; }
@@ -39,6 +41,7 @@ namespace TrinhPhatNhac
             get { return minute; }
             set { minute = value; }
         }
+        public Song() { }
         public Song(string songname, string singername,string filepath, Image imagesong,TimeSpan minutesong)
         {
             songName=songname;

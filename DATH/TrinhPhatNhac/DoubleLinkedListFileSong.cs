@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace TrinhPhatNhac
 {
+    
     public class DoubleLinkedListFileSong
     {
+        #region class SongNode
         public class SongNode
         {
             public Song song;
@@ -19,6 +21,8 @@ namespace TrinhPhatNhac
                 Next = Prev = null;
             }
         }
+        #endregion
+        #region class DoubleLinkedListSong
         public class DoubleLinkedListSong
         {
             SongNode head, tail, current;
@@ -26,7 +30,7 @@ namespace TrinhPhatNhac
             {
                 head = tail = current = null;
             }
-            public void AddLast(Song Song)
+            public void AddLast(Song Song)// phương thức thêm cuối bài hát
             {
                 SongNode newNode = new SongNode(Song);
                 if (head == null)
@@ -45,7 +49,7 @@ namespace TrinhPhatNhac
                 }
 
             }
-            public Song GetCurrentSong()
+            public Song GetCurrentSong()// phương thức lấy bài hát đầu tiên
             {
                 if (current != null)
                     return current.song;
@@ -54,7 +58,7 @@ namespace TrinhPhatNhac
                     return null;
                 }
             }
-            public Song NextSong()
+            public Song NextSong()// phương thức lấy bài hát kế
             {
                 if (current != null)
                 {
@@ -63,7 +67,7 @@ namespace TrinhPhatNhac
                 }
                 else { return null; }
             }
-            public Song PrevSong()
+            public Song PrevSong()// phương thức lấy bài hát trước
             {
                 if (current != null)
                 {
@@ -72,10 +76,11 @@ namespace TrinhPhatNhac
                 }
                 else { return null; }
             }
-            public void ResetSong()
+            public void ResetSong()// hàm reset lại Node
             {
                 current = head;
             }
         }
+        #endregion
     }
 }

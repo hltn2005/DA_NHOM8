@@ -15,23 +15,25 @@ namespace TrinhPhatNhac
     public partial class LoadFileForm : Form
     {
         LinkedListFilePath.LinkedListPath pathList=new LinkedListFilePath.LinkedListPath();
-        public LoadFileForm(LinkedListFilePath.LinkedListPath PathList)
+        public bool checkFolder=false;
+        public LoadFileForm()
         {
             InitializeComponent();
-            pathList = PathList;
         }
 
         private void btnLoadFile_Click(object sender, EventArgs e)
         {
 
-            using (FolderBrowserDialog folderDialog = new FolderBrowserDialog())
+            using (FolderBrowserDialog folderDialog = new FolderBrowserDialog())// mở hộp thoại lấy đường dẫn
             {
                 if (folderDialog.ShowDialog() == DialogResult.OK)
                 {
+                    // lưu đường dẫn người dùng đã chọn vào setting
+                    checkFolder= true;
                     Properties.Settings.Default.SongFolderPath = folderDialog.SelectedPath;
                     Properties.Settings.Default.Save();
-                    string folderPath = folderDialog.SelectedPath;
-                    string[] files = Directory.GetFiles(folderPath, "*.mp3");
+                    string folderPath = folderDialog.SelectedPath;// lấy đường dẫn vừa chọn
+                    string[] files = Directory.GetFiles(folderPath, "*.mp3");// lấy tất cả file mp3 trong đường dẫn 
                     if (files.Length > 0)
                     {
                         foreach (string file in files)
@@ -39,13 +41,22 @@ namespace TrinhPhatNhac
                             pathList.AddLast(file);
                         }
                     }
-
                     
                 }
 
             }
         }
+        public LinkedListFilePath.LinkedListPath PATH()
+        {
+            return pathList;
+        }
+        public bool CheckFolder()
+        {
+            return checkFolder;
+        }
+        private void LoadFileForm_Load(object sender, EventArgs e)
+        {
 
-        
+        }
     }
 }
