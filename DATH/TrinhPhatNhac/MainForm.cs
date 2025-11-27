@@ -1,5 +1,4 @@
-﻿using TrinhPhatNhac.Properties;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TagLib;
+using TrinhPhatNhac.Properties;
 using WMPLib;
 namespace TrinhPhatNhac
 {
@@ -21,7 +21,8 @@ namespace TrinhPhatNhac
         List<Song> songList = new List<Song>();
         List<Song> songListRoot = new List<Song>();
         DoubleLinkedListFileSong.DoubleLinkedListSong songLinkedList;
-
+        bool shuffle = false;
+        private Random random = new Random();
 
         public MainForm()
         {
@@ -150,7 +151,7 @@ namespace TrinhPhatNhac
         // phương thúc kiểm tra danh sách nhạc và danh sách liên kết đôi để vận hành trình phát nhạc
         private bool CheckSongList()
         {
-            if (songLinkedList != null && songList.Count >=0)
+            if (songLinkedList != null && songList.Count >= 0)
             {
                 return true;
             }
@@ -240,7 +241,7 @@ namespace TrinhPhatNhac
             {
                 DisplayAndPlay(songLinkedList.GetCurrentSong());
                 axWMP.Ctlcontrols.play();
-                axWMP.Ctlcontrols.currentPosition = 180;
+                axWMP.Ctlcontrols.currentPosition = 240;
             }
             else
             {
@@ -255,7 +256,16 @@ namespace TrinhPhatNhac
         {
             if (CheckSongList())
             {
-                Song nextSong = songLinkedList.NextSong();
+                Song nextSong;
+                if (shuffle && songList.Count > 1)
+                {
+                    int index = random.Next(songList.Count);
+                    nextSong = songList[index];
+                }
+                else
+                {
+                    nextSong = songLinkedList.NextSong();
+                }
                 if (nextSong != null)
                 {
                     bool isPlaying = (axWMP.playState == WMPLib.WMPPlayState.wmppsPlaying);
@@ -306,6 +316,21 @@ namespace TrinhPhatNhac
                 axWMP.Ctlcontrols.play();
             }
         }
+        private void btnShuffle_Click(object sender, EventArgs e)
+        {
+            btnShuffle.BackColor = Color.Green;
+            shuffle = !shuffle;
+            if (shuffle)
+            {
+                btnShuffle.Image = null;
+                btnShuffle.BackColor = Color.Green ;
+            }
+            else
+            {
+                btnShuffle.Image=Resources.ShuffleIcon;
+            }
+
+        }
         #endregion
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -339,10 +364,6 @@ namespace TrinhPhatNhac
             }
         }
 
-        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
-        }
         // phương thức cập nhật trang thái trình phát nhạc
         private void axWMP_PlayStateChange_1(object sender, AxWMPLib._WMPOCXEvents_PlayStateChangeEvent e)
         {
@@ -350,10 +371,24 @@ namespace TrinhPhatNhac
             //điều kiển để phát bài tiếp theo khi kết thúc bài trước 
             if (axWMP.playState == WMPLib.WMPPlayState.wmppsMediaEnded)// kiểm tra trang thái bài hát có đã kết thúc chưa
             {
-                axWMP.settings.autoStart = true;
-                DisplayAndPlay(songLinkedList.NextSong());
-                axWMP.Ctlcontrols.play();
+                this.BeginInvoke((Action)(() =>
+                {
+
+                    if (shuffle && songList.Count > 1)
+                    {
+                        int index = random.Next(songList.Count);
+                        DisplayAndPlay(songList[index]);
+                        axWMP.Ctlcontrols.play();
+                    }
+                    else
+                    {
+                        DisplayAndPlay(songLinkedList.NextSong());
+                        axWMP.Ctlcontrols.play();
+                    }
+                }));
             }
         }
+
+
     }
 }

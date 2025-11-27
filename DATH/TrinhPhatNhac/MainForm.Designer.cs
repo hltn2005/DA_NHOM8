@@ -237,12 +237,14 @@
             // 
             // btnShuffle
             // 
+            this.btnShuffle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShuffle.Image = global::TrinhPhatNhac.Properties.Resources.ShuffleIcon;
             this.btnShuffle.Location = new System.Drawing.Point(24, 437);
             this.btnShuffle.Name = "btnShuffle";
             this.btnShuffle.Size = new System.Drawing.Size(53, 43);
             this.btnShuffle.TabIndex = 43;
-            this.btnShuffle.UseVisualStyleBackColor = true;
+            this.btnShuffle.UseVisualStyleBackColor = false;
+            this.btnShuffle.Click += new System.EventHandler(this.btnShuffle_Click);
             // 
             // pictureBox2
             // 
@@ -292,7 +294,6 @@
             this.Controls.Add(this.lblPlaying);
             this.Name = "MainForm";
             this.Text = "Trình phát nhạc";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
