@@ -89,7 +89,6 @@ namespace TrinhPhatNhac
             {
                 songList.Add(song);
             }
-            this.Close();
         }
         private void btnRemovePlaylist_Click(object sender, EventArgs e)
         {
