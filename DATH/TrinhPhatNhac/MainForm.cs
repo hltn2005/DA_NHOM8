@@ -198,11 +198,7 @@ namespace TrinhPhatNhac
         private void btnPlaylist_Click(object sender, EventArgs e)
         {
 
-<<<<<<< HEAD
             btnFindSongs OpenPlaylist = new btnFindSongs(songListRoot, songList);
-=======
-            PlaylistForm OpenPlaylist = new PlaylistForm(songListRoot, songList);
->>>>>>> bb97091cb84098b8a9cde50f6ce5deb0ecf38d7c
             OpenPlaylist.ShowDialog();
             if (CheckSongList())
             {

@@ -121,15 +121,12 @@
     <value>True</value>
   </metadata>
   <metadata name="ColSigerName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-<<<<<<< HEAD
     <value>True</value>
   </metadata>
   <metadata name="ColSongName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="ColSigerName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-=======
->>>>>>> bb97091cb84098b8a9cde50f6ce5deb0ecf38d7c
     <value>True</value>
   </metadata>
 </root>
