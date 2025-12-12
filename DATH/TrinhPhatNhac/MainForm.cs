@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AxWMPLib;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,17 +22,21 @@ namespace TrinhPhatNhac
         List<Song> songList = new List<Song>();
         List<Song> songListRoot = new List<Song>();
         DoubleLinkedListFileSong.DoubleLinkedListSong songLinkedList;
+        private PlaylistSong currentPlaylist;
         bool shuffle = false;
+        bool repeat = false;
         private Random random = new Random();
+        private double playbackRate = 1.0;
 
         public MainForm()
         {
             InitializeComponent();
         }
 
+        #region Phương thức
         public void LoadSong(LinkedListFilePath.LinkedListPath filePath)// Phương thức LoadSong
         {
-            string currentPath = filePath.GetCurrentPath();// lấy file path hiện tại trong danh sách file path
+            string currentPath = filePath.GetCurrentPath();// Lấy file path hiện tại trong danh sách file path
             while (currentPath != null)
             {
                 // Điều kiện kiểm tra đường dẫn có null hoặc rỗng hay không tồn tại trong hệ thông không
@@ -42,31 +47,31 @@ namespace TrinhPhatNhac
                     pctMusicPicture.Image = Properties.Resources.DefaultMusicIcon;
                     return;
                 }
-                // hàm tạo file để lấy các meta data của file nhạc 
+                // Hàm tạo file để lấy các meta data của file nhạc 
                 TagLib.File file = TagLib.File.Create(filePath.GetCurrentPath(), TagLib.ReadStyle.Average);
                 string songNameFile = file.Tag.Title;
-                // dùng string.Join nếu bài hát có nhiều hơn 1 ca sĩ thì sẽ được phân cách bởi dấu phẩy
+                // Dùng string.Join nếu bài hát có nhiều hơn 1 ca sĩ thì sẽ được phân cách bởi dấu phẩy
                 string singerNameFile = string.Join(",", file.Tag.Performers);
-                /* sử dụng toán tử 3 ngôi để kiểm tra xem tên bài hát và ca sĩ có null hay rỗng không 
+                /* Sử dụng toán tử 3 ngôi để kiểm tra xem tên bài hát và ca sĩ có null hay rỗng không 
                  nếu có trả về tên file nhạc bỏ đuôi, nêu không thì trả về tên file nhạc đọc từ metadata */
                 string songName = string.IsNullOrEmpty(songNameFile) ?
                     Path.GetFileNameWithoutExtension(filePath.GetCurrentPath()) : songNameFile;
                 string singerName = string.IsNullOrWhiteSpace(singerNameFile) ?
                     Path.GetFileNameWithoutExtension(filePath.GetCurrentPath()) : singerNameFile;
-                TimeSpan minute = file.Properties.Duration;// lấy thời gian 
+                string minute = file.Properties.Duration.ToString(@"mm\:ss");// lấy thời gian 
                 Image image;
                 if (file.Tag.Pictures.Length > 0)// kiểm tra file có ảnh không
                 {
-                    IPicture picture = file.Tag.Pictures[0];// sử dụng IPicture để lấy giá trị ảnh từ thư viện taglib
-                    byte[] pitureBytes = picture.Data.Data;// phân tách ảnh thành mảng byte 
-                    if (pitureBytes != null && pitureBytes.Length > 0)// điều kiện kiểm tra mảng có rỗng hay null không
+                    IPicture picture = file.Tag.Pictures[0];// Sử dụng IPicture để lấy giá trị ảnh từ thư viện taglib
+                    byte[] pitureBytes = picture.Data.Data;// Phân tách ảnh thành mảng byte 
+                    if (pitureBytes != null && pitureBytes.Length > 0)// Điều kiện kiểm tra mảng có rỗng hay null không
                     {
-                        /* memorystream dùng để biến mảng byte của ảnh thành một luồng dữ liệu
+                        /* Memorystream dùng để biến mảng byte của ảnh thành một luồng dữ liệu
                         giống như file trong RAM để Image.FromStream() có thể đọc và tạo ra hình ảnh*/
                         using (MemoryStream ms = new MemoryStream(pitureBytes))
                         {
                             Image tmp = Image.FromStream(ms);// tạo 1 biến tạm để lấy giá trị ảnh
-                            // sử dụng bitmap để sao chép dữ liệu hình ảnh  vào vùng nhớ riêng
+                            // Sử dụng bitmap để sao chép dữ liệu hình ảnh  vào vùng nhớ riêng
                             image = new Bitmap(tmp);// tạo Bitmap từ ảnh tạm để tránh lỗi khi khối lệnh using kết thúc
                         }
                     }
@@ -79,20 +84,22 @@ namespace TrinhPhatNhac
                 {
                     image = Properties.Resources.DefaultMusicIcon;
                 }
-                // truyền các giá trị đọc được từ file nhạc cho đối tượng Song
+                // Truyền các giá trị đọc được từ file nhạc cho đối tượng Song
                 Song song = new Song(songName, singerName, filePath.GetCurrentPath(), image, minute);
-                // sau đó nạp đối tượng song vào danh sách bài hát
+                // Chuyển đổi ảnh sang string
+                song.ImageBase64 = PlaylistManager.ConvertImageToBase64(image);
+                // Sau đó nạp đối tượng song vào danh sách bài hát
                 songListRoot.Add(song);
                 songList.Add(song);
-                filePath.NextPath();// trỏ tới node kế 
-                currentPath = filePath.GetCurrentPath();// gán lại node kế cho current tiếp tục thực hiện điều kiện
+                filePath.NextPath();// Trỏ tới node kế 
+                currentPath = filePath.GetCurrentPath();// Gán lại node kế cho current tiếp tục thực hiện điều kiện
             }
             //Điều kiển kiểm tra danh sách liên kết đôi có trống không
             if (songListRoot.Count > 0)
             {
-                // nạp các bài hát trong dánh sách bài hát vào danh sách liên kết đôi để phát nhạc
+                // Nạp các bài hát trong dánh sách bài hát vào danh sách liên kết đôi để phát nhạc
                 ConvertListSongToLinkedList(songListRoot);
-                // gọi hàm trình lên các dữ liệu bài hát
+                // Gọi hàm trình lên các dữ liệu bài hát
                 DisplayAndPlay(songLinkedList.GetCurrentSong());
             }
             else
@@ -102,7 +109,7 @@ namespace TrinhPhatNhac
                 pctMusicPicture.Image = Properties.Resources.DefaultMusicIcon;
             }
         }
-        // phương thức nạp đối tượng song vào danh sách liên kết 
+        // Phương thức nạp đối tượng song vào danh sách liên kết 
         public void ConvertListSongToLinkedList(List<Song> ListSong)
         {
             songLinkedList = new DoubleLinkedListFileSong.DoubleLinkedListSong();
@@ -117,7 +124,7 @@ namespace TrinhPhatNhac
                 axWMP.URL = songLinkedList.GetCurrentSong().FilePath;
             }
         }
-        //phương thức gán các dữ liệu bài hát cho dữ liệu form
+        // Phương thức gán các dữ liệu bài hát cho dữ liệu form
         public void DisplayAndPlay(Song song)
         {
             if (song == null)
@@ -126,14 +133,20 @@ namespace TrinhPhatNhac
                 lblSongName.Text = "Không tìm thấy thông tin bài hát";
                 lblSingerName.Text = "Không tìm thấy thông tin ca sỹ";
                 pctMusicPicture.Image = Properties.Resources.DefaultMusicIcon;
+                lblTime.Text = "00:00";
+                lblSecond.Text = "00:00";
+                trackBar1.Value = 0;
+                trackBar1.Maximum = 0;
                 return;
             }
             lblSongName.Text = song.SongName.ToString();
             lblSingerName.Text = song.SingerName.ToString();
             pctMusicPicture.Image = song.Image;
             axWMP.URL = song.FilePath;
+            axWMP.Ctlcontrols.currentPosition = 0;
+
         }
-        // phương thức thay đổi nút pause và play
+        // Phương thức thay đổi nút pause và play
         private void CheckAction()
         {
             if (axWMP.playState == WMPLib.WMPPlayState.wmppsPlaying)
@@ -148,7 +161,7 @@ namespace TrinhPhatNhac
             }
 
         }
-        // phương thúc kiểm tra danh sách nhạc và danh sách liên kết đôi để vận hành trình phát nhạc
+        // Phương thúc kiểm tra danh sách nhạc và danh sách liên kết đôi để vận hành trình phát nhạc
         private bool CheckSongList()
         {
             if (songLinkedList != null && songList.Count >= 0)
@@ -157,7 +170,7 @@ namespace TrinhPhatNhac
             }
             return false;
         }
-        // phương thức cập nhật playlist 
+        // Phương thức cập nhật playlist 
         private void UpdatePlayList()
         {
             if (songList == null || songList.Count == 0)
@@ -172,95 +185,389 @@ namespace TrinhPhatNhac
 
             }
             songLinkedList = new DoubleLinkedListFileSong.DoubleLinkedListSong();
-            foreach (Song song in songListRoot)
-            {
-                foreach (Song song1 in songList)
-                {
-                    if (song.SongName == song1.SongName)
-                    {
-                        song1.Image = song.Image;
-                    }
-                }
-            }
+
             foreach (Song song in songList)
             {
                 songLinkedList.AddLast(song);
             }
             songLinkedList.ResetSong();
             if (songLinkedList.GetCurrentSong() != null)
+            {
                 DisplayAndPlay(songLinkedList.GetCurrentSong());
+            }
             else
                 return;
+        }
+        // Phương thức xử lý âm thanh
+        private void trackBar2_Scroll(object sender, EventArgs e)
+        {
+            axWMP.settings.volume = trackBar2.Value;
+            lblVolume.Text = trackBar2.Value.ToString();
+        }
+        // Phương thức cập nhật trang thái trình phát nhạc
+        private void axWMP_PlayStateChange_1(object sender, AxWMPLib._WMPOCXEvents_PlayStateChangeEvent e)
+        {
+            CheckAction();
+            //điều kiển để phát bài tiếp theo khi kết thúc bài trước 
+            if (axWMP.playState == WMPLib.WMPPlayState.wmppsMediaEnded)// kiểm tra trang thái bài hát có đã kết thúc chưa
+            {
+                this.BeginInvoke((Action)(() =>
+                {
+                    Song nextSong = new Song();
+                    if (shuffle && songList.Count > 1 && !repeat)
+                    {
+                        Song currentSong = songLinkedList.GetCurrentSong();
+                        nextSong = ShuffleSong(currentSong);
+                        DisplayAndPlay(nextSong);
+                        axWMP.Ctlcontrols.play();
+                    }
+                    if (repeat && songList.Count > 1 && !shuffle)
+                    {
+                        Song currentSong = songLinkedList.GetCurrentSong();
+                        DisplayAndPlay(currentSong);
+                        axWMP.Ctlcontrols.play();
+                    }
+                    else
+                    {
+                        DisplayAndPlay(songLinkedList.NextSong());
+                        axWMP.Ctlcontrols.play();
+                    }
+                }));
+            }
+        }
+        // Phương thức điều chỉnh tốc độ phát
+        private void tsmSpeedOptions(object sender, EventArgs e)
+        {
+            if (sender is ToolStripMenuItem selectedItem)
+            {
+                double newRate;
 
+                // 1. Xác định tốc độ dựa trên tên của mục menu 
+                switch (selectedItem.Name)
+                {
+                    case "tsmSpeed025":
+                        newRate = 0.25;
+                        break;
+                    case "tsmSpeed05":
+                        newRate = 0.5;
+                        break;
+                    case "tsmSpeed075":
+                        newRate = 0.75;
+                        break;
+                    case "tsmSpeed1":
+                        newRate = 1.0;
+                        break;
+                    case "tsmSpeed125":
+                        newRate = 1.25;
+                        break;
+                    case "tsmSpeed15":
+                        newRate = 1.5;
+                        break;
+                    case "tsmSpeed175":
+                        newRate = 1.75;
+                        break;
+                    case "tsmSpeed2":
+                        newRate = 2.0;
+                        break;
+                    default:
+                        return;
+                }
+
+                // Tắt Check cho tất cả mục và chỉ Check mục được chọn 
+                // Lặp qua ContextMenuStrip chứa các mục 
+                // Dùng ContextMenuStrip của Form để truy cập
+                ContextMenuStrip cms = selectedItem.Owner as ContextMenuStrip;
+                if (cms != null)
+                {
+                    foreach (ToolStripItem item in cms.Items)
+                    {
+                        if (item is ToolStripMenuItem subItem)
+                        {
+                            subItem.Checked = (subItem == selectedItem);
+                        }
+                    }
+                }
+
+                // 3. Áp dụng tốc độ mới cho WMP Control
+                if (axWMP != null)
+                {
+                    axWMP.settings.rate = newRate;
+                }
+
+                // 4. Cập nhật biến theo dõi và Text hiển thị trên nút chính 
+                playbackRate = newRate;
+                btnSpeed.Text = $"Tốc đô phát: {newRate}x";
+
+            }
+        }
+        #region Phương thức Shuffle
+        private void UpdateSongLinkList(Song song)
+        {
+            while (songLinkedList.GetCurrentSong() != song)
+            {
+                songLinkedList.NextSong();
+            }
+        }
+        private Song ShuffleSong(Song currentSong)
+        {
+            Song nextSong = new Song();
+            int index = random.Next(songList.Count);
+            nextSong = songList[index];
+            while (currentSong == nextSong)
+            {
+                index = random.Next(songList.Count);
+                nextSong = songList[index];
+            }
+            UpdateSongLinkList(nextSong);
+            return nextSong;
+        }
+        #endregion
+        #region Phương thức thao tác thời gian bài hát
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (axWMP.playState == WMPLib.WMPPlayState.wmppsPlaying)
+            {
+                // Tạo 2 biến để lấy thời gian tổng và hiện tại của bài hát
+                double dur = axWMP.currentMedia.duration;
+                double pos = axWMP.Ctlcontrols.currentPosition;
+                // Gán cho thời gian của trackspace
+                trackBar1.Maximum = (int)dur;
+                trackBar1.Value = (int)pos;
+                // Sử dụng timespan để chuyển đổi và biểu diễn thời gian
+                lblSecond.Text = TimeSpan.FromSeconds(pos).ToString(@"mm\:ss");
+                lblTime.Text = TimeSpan.FromSeconds(dur).ToString(@"mm\:ss");
+            }
         }
 
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            axWMP.Ctlcontrols.currentPosition = trackBar1.Value;
+        }
+        #endregion
+
+        #endregion
         #region Buttons 
+        // Nút xem playlist
         private void btnPlaylist_Click(object sender, EventArgs e)
         {
 
-            btnFindSongs OpenPlaylist = new btnFindSongs(songListRoot, songList);
-            OpenPlaylist.ShowDialog();
-            if (CheckSongList())
-            {
-                UpdatePlayList();
-            }
-        }
+            // LƯU TRẠNG THÁI HIỆN TẠI 
+            Song previousSong = (songLinkedList != null) ? songLinkedList.GetCurrentSong() : null;
+            double previousPosition = 0;
+            bool wasPlaying = false;
 
+            if (previousSong != null && axWMP.playState != WMPLib.WMPPlayState.wmppsStopped)
+            {
+                previousPosition = axWMP.Ctlcontrols.currentPosition;
+                wasPlaying = (axWMP.playState == WMPLib.WMPPlayState.wmppsPlaying);
+                axWMP.Ctlcontrols.stop();
+            }
+
+            using (PlaylistForm OpenPlaylist = new PlaylistForm(songListRoot, songList))
+            {
+                // Cập nhật currentPlaylist ban đầu cho PlaylistForm (nếu đã có)
+                if (currentPlaylist != null)
+                {
+                    OpenPlaylist.CurrentPlaylist = currentPlaylist;
+                }
+
+                OpenPlaylist.ShowDialog();
+
+                // XỬ LÝ KẾT QUẢ VÀ KHÔI PHỤC TRẠNG THÁI
+
+                // Lấy cờ báo hiệu thay đổi nội dung (thêm/xóa bài)
+                bool playlistContentChanged = OpenPlaylist.ChangeOccurred;
+
+                if (OpenPlaylist.CurrentPlaylist != null && OpenPlaylist.CurrentPlaylist != currentPlaylist)
+                {
+                    // Đã chọn playlist khác
+                    currentPlaylist = OpenPlaylist.CurrentPlaylist;
+                    // Cập nhật lại songList từ Playlist mới được chọn trong Form con
+                    songList.Clear();
+                    songList.AddRange(currentPlaylist.PlayList.ToList());
+                    playlistContentChanged = true;
+                }
+
+                if (playlistContentChanged)
+                {
+                    // Nếu có thay đổi nội dung hoặc chọn Playlist mới, tải lại và bắt đầu từ bài đầu
+                    UpdatePlayList();
+
+                    // Tiếp tục phát nếu trước đó đang phát 
+                    if (wasPlaying)
+                    {
+                        axWMP.Ctlcontrols.play();
+                    }
+                }
+                else if (previousSong != null && songLinkedList != null)
+                {
+                    // không có thay đổi playlist, khôi phục bài hát cũ và vị trí
+                    UpdateSongLinkList(previousSong);
+                    DisplayAndPlay(previousSong);
+                    axWMP.Ctlcontrols.currentPosition = previousPosition;
+
+                    if (wasPlaying)
+                    {
+                        axWMP.Ctlcontrols.play();
+                    }
+                }
+            }
+            // Cập nhật lại tốc độ phát
+            axWMP.settings.rate = playbackRate;
+        }
+        // Nút xem danh sách playlist
         private void btnPlaylistManager_Click(object sender, EventArgs e)
         {
-            PlaylistManagerForm qlPlaylist = new PlaylistManagerForm(songListRoot, songList);
+            // LƯU TRẠNG THÁI HIỆN TẠI, TRƯỚC KHI MỞ FORM 
+            Song previousSong = (songLinkedList != null) ? songLinkedList.GetCurrentSong() : null;
+            double previousPosition = 0;
+            bool wasPlaying = false;
 
-            qlPlaylist.ShowDialog();
-            if (CheckSongList())
+            // Chỉ lưu vị trí và trạng thái nếu đang có bài hát và WMP đang tải/phát
+            if (previousSong != null && axWMP.playState != WMPLib.WMPPlayState.wmppsStopped)
             {
-                UpdatePlayList();
+                previousPosition = axWMP.Ctlcontrols.currentPosition;
+                wasPlaying = (axWMP.playState == WMPLib.WMPPlayState.wmppsPlaying);
+                axWMP.Ctlcontrols.stop();
+            }
+
+            using (PlaylistManagerForm qlPlaylist = new PlaylistManagerForm(songListRoot))
+            {
+                PlaylistSong oldCurrentPlaylist = currentPlaylist;
+                qlPlaylist.ShowDialog();
+
+                bool playlistChanged = false;
+
+                if (qlPlaylist.SelectedPlayList != null)
+                {
+                    // Playlist mới được chọn
+                    currentPlaylist = qlPlaylist.SelectedPlayList;
+                    songList.Clear();
+                    songList.AddRange(currentPlaylist.PlayList.ToList());
+                    // Đánh dấu là đã thay đổi để UpdatePlayList chọn bài đầu tiên
+                    playlistChanged = true;
+                }
+                else if (oldCurrentPlaylist != null && qlPlaylist.SelectedPlayList == null && qlPlaylist.CheckSelect())
+                {
+                    // Người dùng chọn xóa/làm trống Playlist
+                    songList.Clear();
+                    currentPlaylist = null;
+                    playlistChanged = true;
+                }
+
+                // KHÔI PHỤC TRẠNG THÁI SAU KHI FORM CON ĐÓNG
+
+                // Nếu Playlist thay đổi, chúng ta dùng UpdatePlayList() như cũ để tải bài đầu tiên
+                if (playlistChanged)
+                {
+                    UpdatePlayList(); // Tạo lại list, tải bài đầu tiên 
+                }
+                // Nếu không thay đổi Playlist 
+                else if (previousSong != null && songLinkedList != null)
+                {
+                    // Đảm bảo con trỏ danh sách liên kết kép trỏ đúng bài cũ
+                    UpdateSongLinkList(previousSong);
+
+                    // Tải lại bài hát và vị trí
+                    DisplayAndPlay(previousSong);
+                    axWMP.Ctlcontrols.currentPosition = previousPosition;
+
+                    // Tiếp tục phát nếu trước đó đang phát
+                    if (wasPlaying)
+                    {
+                        axWMP.Ctlcontrols.play();
+                    }
+                }
+                // Cập nhật lại tốc độ phát
+                axWMP.settings.rate = playbackRate;
             }
         }
-
+        //nut menu
         private void btnMenu_Click(object sender, EventArgs e)
         {
-            LoadFileForm loadFileForm = new LoadFileForm();
-            loadFileForm.ShowDialog();
-            if (loadFileForm.CheckFolder())
+            // LƯU TRẠNG THÁI HIỆN TẠI 
+            Song previousSong = (songLinkedList != null) ? songLinkedList.GetCurrentSong() : null;
+            double previousPosition = 0;
+            bool wasPlaying = false;
+            bool pathChanged = false;
+
+            if (previousSong != null && axWMP.playState != WMPLib.WMPPlayState.wmppsStopped)
             {
+                previousPosition = axWMP.Ctlcontrols.currentPosition;
+                wasPlaying = (axWMP.playState == WMPLib.WMPPlayState.wmppsPlaying);
                 axWMP.Ctlcontrols.stop();
-                pathList = loadFileForm.PATH();
-                songListRoot = new List<Song>();
-                songList = new List<Song>();
-                songLinkedList = null;
-                LoadSong(pathList);
             }
-            else
+
+            using (LoadFileForm loadFileForm = new LoadFileForm())
             {
-                return;
+                loadFileForm.ShowDialog();
+
+                // Kiểm tra xem người dùng có chọn Folder mới không
+                if (loadFileForm.CheckFolder())
+                {
+                    // Tải lại hoàn toàn 
+                    pathList = loadFileForm.PATH();
+                    songListRoot = new List<Song>();
+                    songList = new List<Song>();
+                    songLinkedList = null;
+                    LoadSong(pathList);
+                    pathChanged = true;
+                }
+
+                // KHÔI PHỤC TRẠNG THÁI SAU KHI FORM ĐÓNG
+                if (pathChanged)
+                {
+                    // Nếu có folder mới, bắt đầu phát bài đầu tiên nếu trước đó đang phát
+                    if (wasPlaying && songLinkedList != null)
+                    {
+                        axWMP.Ctlcontrols.play();
+                    }
+                }
+                else if (previousSong != null && songLinkedList != null)
+                {
+                    // Nếu không chọn folder mới, khôi phục trạng thái cũ
+                    UpdateSongLinkList(previousSong);
+                    DisplayAndPlay(previousSong);
+                    axWMP.Ctlcontrols.currentPosition = previousPosition;
+
+                    if (wasPlaying)
+                    {
+                        axWMP.Ctlcontrols.play();
+                    }
+                }
+                // Cập nhật lại tốc độ phát
+                axWMP.settings.rate = playbackRate;
             }
         }
+        // Nút play 
         private void btnPlay_Click(object sender, EventArgs e)
         {
             if (CheckSongList())
             {
                 DisplayAndPlay(songLinkedList.GetCurrentSong());
+
                 axWMP.Ctlcontrols.play();
-                axWMP.Ctlcontrols.currentPosition = 240;
             }
             else
             {
                 return;
             }
         }
+        //Nút Pause
         private void btnPause_Click(object sender, EventArgs e)
         {
             axWMP.Ctlcontrols.pause();
         }
+        //Nút chuyển sang bài nhạc kế tiếp
         private void btnNext_Click(object sender, EventArgs e)
         {
             if (CheckSongList())
             {
-                Song nextSong;
+                Song nextSong = new Song();
                 if (shuffle && songList.Count > 1)
                 {
-                    int index = random.Next(songList.Count);
-                    nextSong = songList[index];
+                    Song currentSong = songLinkedList.GetCurrentSong();
+                    nextSong = ShuffleSong(currentSong);
                 }
                 else
                 {
@@ -273,7 +580,6 @@ namespace TrinhPhatNhac
                     if (isPlaying)
                     {
                         axWMP.Ctlcontrols.play();
-                        axWMP.Ctlcontrols.currentPosition = 180;
                     }
                     else
                         axWMP.Ctlcontrols.pause();
@@ -285,6 +591,7 @@ namespace TrinhPhatNhac
             }
 
         }
+        // Nút chuyển sang bài nhạc trước
         private void btnPrevious_Click(object sender, EventArgs e)
         {
             if (CheckSongList())
@@ -308,32 +615,55 @@ namespace TrinhPhatNhac
             }
 
         }
+        //Nút lặp lại bài hát
         private void btnRepeat_Click(object sender, EventArgs e)
         {
             if (CheckSongList())
             {
-                DisplayAndPlay(songLinkedList.GetCurrentSong());
-                axWMP.Ctlcontrols.play();
+                repeat = !repeat;
+                if (repeat)
+                {
+                    shuffle = false;
+                    btnShuffle.Image = Resources.ShuffleIcon;
+                    btnRepeat.Image = null;
+                    btnRepeat.Image = Resources.RepeatIconOn;
+                }
+                else
+                {
+                    btnRepeat.Image = Resources.RepeatIcon;
+                }
             }
         }
+        //Nút phát nhạc ngẫu nhiên
         private void btnShuffle_Click(object sender, EventArgs e)
         {
             btnShuffle.BackColor = Color.Green;
             shuffle = !shuffle;
             if (shuffle)
             {
+                repeat = false;
+                btnRepeat.Image = Resources.RepeatIcon;
                 btnShuffle.Image = null;
-                btnShuffle.BackColor = Color.Green ;
+                btnShuffle.Image = Resources.ShuffleIconOn;
             }
             else
             {
-                btnShuffle.Image=Resources.ShuffleIcon;
+                btnShuffle.Image = Resources.ShuffleIcon;
             }
 
+        }
+        // Nút điều chỉnh tốc độ phát
+        private void btnSpeed_Click(object sender, EventArgs e)
+        {
+            cmsSpeedOptions.Show(btnSpeed, 0, btnSpeed.Height);
         }
         #endregion
         private void MainForm_Load(object sender, EventArgs e)
         {
+            timer1.Start();
+            trackBar2_Scroll(sender, e);
+            axWMP.settings.rate = playbackRate;
+            btnSpeed.Text = "Tốc độ phát: 1.0x";
             // kiểm tra tồn tại của đường dẫn tới folder chưa bài hát trước khi hiện form
             if (Properties.Settings.Default.SongFolderPath != null)
             {
@@ -363,32 +693,6 @@ namespace TrinhPhatNhac
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        // phương thức cập nhật trang thái trình phát nhạc
-        private void axWMP_PlayStateChange_1(object sender, AxWMPLib._WMPOCXEvents_PlayStateChangeEvent e)
-        {
-            CheckAction();
-            //điều kiển để phát bài tiếp theo khi kết thúc bài trước 
-            if (axWMP.playState == WMPLib.WMPPlayState.wmppsMediaEnded)// kiểm tra trang thái bài hát có đã kết thúc chưa
-            {
-                this.BeginInvoke((Action)(() =>
-                {
-
-                    if (shuffle && songList.Count > 1)
-                    {
-                        int index = random.Next(songList.Count);
-                        DisplayAndPlay(songList[index]);
-                        axWMP.Ctlcontrols.play();
-                    }
-                    else
-                    {
-                        DisplayAndPlay(songLinkedList.NextSong());
-                        axWMP.Ctlcontrols.play();
-                    }
-                }));
-            }
-        }
-
 
     }
 }

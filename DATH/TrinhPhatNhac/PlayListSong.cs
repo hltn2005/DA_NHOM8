@@ -9,11 +9,12 @@ using System.Text.Json.Serialization;
 
 namespace TrinhPhatNhac
 {
-    public class PlayListSong
+    public class PlaylistSong
     {
-        public string name;
-        public List<Song> playList;
+        public string name;// Tên playlist
+        public List<Song> playList;// Danh sách bài hát trong playlist
 
+        #region Property
         public string Name
         {
             get { return name; }
@@ -24,8 +25,8 @@ namespace TrinhPhatNhac
             get { return playList; }
             set { playList = value; }
         }
-
-        [JsonIgnore]// bỏ qua số lượng bài hát trong playList
+        #endregion
+        // phương thức trả về số lượn bài hát
         public int SongCount
         {
             get
@@ -36,11 +37,10 @@ namespace TrinhPhatNhac
                     return 0;
             }
         }
-        public PlayListSong()
+        //Constructor
+        public PlaylistSong()
         {
             playList=new List<Song>();
         }
-
-      
     }
 }

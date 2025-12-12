@@ -20,11 +20,11 @@ namespace TrinhPhatNhac
         {
             InitializeComponent();
         }
-
+        // Nút mở thư mục và lấy đường dẫn
         private void btnLoadFile_Click(object sender, EventArgs e)
         {
-
-            using (FolderBrowserDialog folderDialog = new FolderBrowserDialog())// mở hộp thoại lấy đường dẫn
+            // mở hộp thoại lấy đường dẫn
+            using (FolderBrowserDialog folderDialog = new FolderBrowserDialog())
             {
                 if (folderDialog.ShowDialog() == DialogResult.OK)
                 {
@@ -46,17 +46,15 @@ namespace TrinhPhatNhac
 
             }
         }
+        // Phương thức trả về đường dẫn
         public LinkedListFilePath.LinkedListPath PATH()
         {
             return pathList;
         }
+        //Phương thức kiểm tra đường dẫn
         public bool CheckFolder()
         {
             return checkFolder;
-        }
-        private void LoadFileForm_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

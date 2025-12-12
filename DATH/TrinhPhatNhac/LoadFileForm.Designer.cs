@@ -28,31 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnLoadFile = new System.Windows.Forms.Button();
-            this.SuspendLayout();
-            // 
-            // btnLoadFile
-            // 
-            this.btnLoadFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnLoadFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoadFile.Location = new System.Drawing.Point(115, 168);
-            this.btnLoadFile.Name = "btnLoadFile";
-            this.btnLoadFile.Size = new System.Drawing.Size(233, 61);
-            this.btnLoadFile.TabIndex = 0;
-            this.btnLoadFile.Text = "Load File";
-            this.btnLoadFile.UseVisualStyleBackColor = false;
-            this.btnLoadFile.Click += new System.EventHandler(this.btnLoadFile_Click);
-            // 
-            // LoadFileForm
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(472, 561);
-            this.Controls.Add(this.btnLoadFile);
-            this.Name = "LoadFileForm";
-            this.Text = "Trình phát nhạc";
-            this.Load += new System.EventHandler(this.LoadFileForm_Load);
-            this.ResumeLayout(false);
+			this.btnLoadFile = new System.Windows.Forms.Button();
+			this.SuspendLayout();
+			// 
+			// btnLoadFile
+			// 
+			this.btnLoadFile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+			this.btnLoadFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnLoadFile.Location = new System.Drawing.Point(115, 168);
+			this.btnLoadFile.Name = "btnLoadFile";
+			this.btnLoadFile.Size = new System.Drawing.Size(233, 61);
+			this.btnLoadFile.TabIndex = 0;
+			this.btnLoadFile.Text = "Load File";
+			this.btnLoadFile.UseVisualStyleBackColor = false;
+			this.btnLoadFile.Click += new System.EventHandler(this.btnLoadFile_Click);
+			// 
+			// LoadFileForm
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+			this.ClientSize = new System.Drawing.Size(472, 561);
+			this.Controls.Add(this.btnLoadFile);
+			this.Name = "LoadFileForm";
+			this.Text = "Trình phát nhạc";
+			this.ResumeLayout(false);
 
         }
 

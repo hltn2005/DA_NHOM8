@@ -1,0 +1,27 @@
+{
+  "ShowEmptyProjects": false,
+  "SelectedGroups": [
+    "D:\\DATH\\TrinhPhatNhac\\AddSongForm.resx",
+    "D:\\DATH\\TrinhPhatNhac\\Properties\\Resources.resx",
+    "D:\\DATH\\TrinhPhatNhac\\RenamePlaylistForm.resx",
+    "D:\\DATH\\TrinhPhatNhac\\MainForm.resx",
+    "D:\\DATH\\TrinhPhatNhac\\PlaylistManagerForm.resx",
+    "D:\\DATH\\TrinhPhatNhac\\LoadFileForm.resx",
+    "D:\\DATH\\TrinhPhatNhac\\PlaylistForm.resx"
+  ],
+  "ExpandedProjects": [],
+  "EnableSpellChecker": true,
+  "ColumnOrder": [
+    "name",
+    "file-path",
+    "file-name",
+    "type",
+    "neutral-value",
+    "neutral-comment"
+  ],
+  "VisibleColumnKeys": [
+    "name",
+    "neutral-comment",
+    "neutral-value"
+  ]
+}

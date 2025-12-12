@@ -153,6 +153,16 @@ namespace TrinhPhatNhac.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap RepeatIconOn {
+            get {
+                object obj = ResourceManager.GetObject("RepeatIconOn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Search {
             get {
                 object obj = ResourceManager.GetObject("Search", resourceCulture);
@@ -166,6 +176,16 @@ namespace TrinhPhatNhac.Properties {
         internal static System.Drawing.Bitmap ShuffleIcon {
             get {
                 object obj = ResourceManager.GetObject("ShuffleIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ShuffleIconOn {
+            get {
+                object obj = ResourceManager.GetObject("ShuffleIconOn", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

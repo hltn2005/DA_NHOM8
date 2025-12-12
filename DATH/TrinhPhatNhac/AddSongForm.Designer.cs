@@ -28,8 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.dgvAddSong = new System.Windows.Forms.DataGridView();
 			this.ColSongName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.ColSongTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.ColSingerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.btnThem = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.dgvAddSong)).BeginInit();
@@ -38,9 +42,20 @@
 			// dgvAddSong
 			// 
 			this.dgvAddSong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+			this.dgvAddSong.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+			this.dgvAddSong.BackgroundColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+			dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+			dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+			dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dgvAddSong.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
 			this.dgvAddSong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvAddSong.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColSongName,
+            this.ColSongTime,
             this.ColSingerName});
 			this.dgvAddSong.Location = new System.Drawing.Point(12, 12);
 			this.dgvAddSong.Name = "dgvAddSong";
@@ -53,20 +68,32 @@
 			// ColSongName
 			// 
 			this.ColSongName.DataPropertyName = "SongName";
+			dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.ColSongName.DefaultCellStyle = dataGridViewCellStyle5;
 			this.ColSongName.HeaderText = "Tên Bài Hát";
 			this.ColSongName.MinimumWidth = 6;
 			this.ColSongName.Name = "ColSongName";
 			// 
+			// ColSongTime
+			// 
+			this.ColSongTime.DataPropertyName = "Minute";
+			this.ColSongTime.HeaderText = "Thời Gian";
+			this.ColSongTime.MinimumWidth = 6;
+			this.ColSongTime.Name = "ColSongTime";
+			// 
 			// ColSingerName
 			// 
 			this.ColSingerName.DataPropertyName = "SingerName";
+			dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.ColSingerName.DefaultCellStyle = dataGridViewCellStyle6;
 			this.ColSingerName.HeaderText = "Ca Sĩ";
 			this.ColSingerName.MinimumWidth = 6;
 			this.ColSingerName.Name = "ColSingerName";
 			// 
 			// btnThem
 			// 
-			this.btnThem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+			this.btnThem.BackColor = System.Drawing.Color.Chartreuse;
+			this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnThem.Location = new System.Drawing.Point(580, 449);
 			this.btnThem.Name = "btnThem";
@@ -80,6 +107,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
 			this.ClientSize = new System.Drawing.Size(712, 512);
 			this.Controls.Add(this.btnThem);
 			this.Controls.Add(this.dgvAddSong);
@@ -96,6 +124,7 @@
         private System.Windows.Forms.DataGridView dgvAddSong;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColSongName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColSongTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColSingerName;
     }
 }

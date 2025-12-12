@@ -10,59 +10,166 @@ using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace TrinhPhatNhac
 {
-    public partial class btnFindSongs : Form
+    public partial class PlaylistForm : Form
     {
 
-        List<Song> songList = new List<Song>();
-        List<Song> songListRoot = new List<Song>();
-        private PlayListSong PlayListSong = new PlayListSong();
-        public btnFindSongs(List<Song> songlistroot, List<Song> songlist)
+        private List<Song> songList = new List<Song>();
+        private List<Song> songListRoot = new List<Song>();
+        private PlaylistSong currentPlayList;
+        private bool changeOccurred = false;
+        public PlaylistForm(List<Song> songlistroot, List<Song> songlist)
         {
             InitializeComponent();
             songList = songlist;
             songListRoot = songlistroot;
             dgvPlayList.AutoGenerateColumns = false;
-            dgvPlayList.DataSource = songlist;
             dgvPlayList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
         }
-        #region Button
-        private void btnPlaylistManager2_Click(object sender, EventArgs e)
+        // Property khởi tạo và trả về playlist hiện tại
+        public PlaylistSong CurrentPlaylist
         {
-            PlaylistManagerForm qlPlaylist = new PlaylistManagerForm(songListRoot, songList);
-            qlPlaylist.ShowDialog();
-            // điều kiện kiểm tra nếu playlist đã chọn rỗng hoặc null thì dgv sẽ không có dữ liệu
-            if (songList == null || songList.Count == 0)
+            get { return currentPlayList; }
+            set
             {
-                dgvPlayList.DataSource = null;
+                currentPlayList = value;
+                if (currentPlayList != null)
+                {
+                    songList.Clear();
+                    songList.AddRange(currentPlayList.PlayList.ToList());
+                    lblNamePlaylist.Text = currentPlayList.Name;
+                    dgvPlayList.DataSource = null;
+                    dgvPlayList.DataSource = songList;
+                }
+            }
+        }
+        // Property kiểm tra sự thay đổi của playlist
+        public bool ChangeOccurred
+        {
+            get { return changeOccurred; }
+        }
+        #region Phương thức
+        // Phương thức lưu playlist đã chọn
+        private void SaveSelectedPlayList()
+        {
+            if (currentPlayList == null)
+            {
+                MessageBox.Show("Vui lòng chọn một Playlist trước khi thực hiện thao tác.",
+                    "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (qlPlaylist.SelectedPlayList != null && qlPlaylist.SelectedPlayList.PlayList.Count > 0)
+            var allPlayLists = PlaylistManager.LoadPlayList();
+            PlaylistSong playListToUpdate = null;
+            foreach (var playList in allPlayLists)
             {
-                songList.Clear();
-                songList.AddRange(qlPlaylist.SelectedPlayList.PlayList);// addrange thêm nhiều bài hát 1 lần 
-                dgvPlayList.DataSource = null;
-                dgvPlayList.DataSource = songList;// tạo lại data cho dgv
+                if (currentPlayList.Name == playList.Name)
+                {
+                    playListToUpdate = playList;
+                    break;
+                }
+            }
+            if (playListToUpdate != null)
+            {
+                playListToUpdate.playList = songList.ToList();
+                currentPlayList=playListToUpdate;
+                PlaylistManager.SavePlayLists(allPlayLists);
+            }
+            else
+            {
+                MessageBox.Show($"Không tìm thấy Playlist '{currentPlayList.Name}' trong danh sách lưu trữ.",
+                    "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        // Phương thức tìm bài hát
+        private List<Song> FindSongs(string searchKeyword)
+        {
+            List<Song> foundSongs = new List<Song>();
+            foreach (Song song in songListRoot)
+            {
+                if ((song.SongName != null && song.SongName.ToLower().Contains(searchKeyword))
+                    || (song.SingerName != null && song.SingerName.ToLower().Contains(searchKeyword)))
+                {
+                    foundSongs.Add(song);
+                }
+            }
+            return foundSongs;
+        }
+        //Phương thức lấy sư kiên nút enter
+        private void PlaylistForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Ngăn hệ thống xử lý phím Enter
+                e.SuppressKeyPress = true;
+                e.Handled = true;
+            }
+        }
+        //Phương thức hoán đổi vị trí trong List<Song>
+        private void SwapSongs(List<Song> list, int indexA, int indexB)
+        {
+            Song temp = list[indexA];
+            list[indexA] = list[indexB];
+            list[indexB] = temp;
+        }
 
+        // Phương thức cập nhật DataGridView và chọn lại hàng
+        private void RefreshPlaylistDisplay(int newSelectedIndex)
+        {
+            // Cập nhật lại DataGridView (Vì songList đã bị thay đổi)
+            dgvPlayList.DataSource = null;
+            dgvPlayList.DataSource = songList;
+
+            // Chọn lại và cuộn đến vị trí mới của bài hát
+            if (newSelectedIndex >= 0 && newSelectedIndex < dgvPlayList.Rows.Count)
+            {
+                dgvPlayList.ClearSelection();
+                dgvPlayList.Rows[newSelectedIndex].Selected = true;
+                dgvPlayList.FirstDisplayedScrollingRowIndex = newSelectedIndex;
+            }
+        }
+        #endregion
+        #region Button
+        // Nút mở danh sách playlist
+        private void btnPlaylistManager2_Click(object sender, EventArgs e)
+        {
+            using (PlaylistManagerForm qlPlaylist = new PlaylistManagerForm(songListRoot))
+            {
+                qlPlaylist.ShowDialog();
+                // điều kiện kiểm tra nếu playlist đã chọn rỗng hoặc null thì dgv sẽ không có dữ liệu
+                if (qlPlaylist.SelectedPlayList != null)
+                {
+                    CurrentPlaylist = qlPlaylist.SelectedPlayList;
+                }
+            }
+
+        }
+        //Nút thêm bài hát
         private void btnAddSong_Click(object sender, EventArgs e)
         {
-            AddSongForm newForm = new AddSongForm(songListRoot, songList);
-            newForm.ShowDialog();
-            if (newForm.CheckSelect())// nếu danh sách có thêm bài hát mới thì cập nhật lại data cho dgv
+            using (AddSongForm newForm = new AddSongForm(songListRoot, songList))
             {
-                dgvPlayList.DataSource = null;
-                dgvPlayList.DataSource = songList;
+                newForm.ShowDialog();
+                if (newForm.CheckSelect())// nếu danh sách có thêm bài hát mới thì cập nhật lại data cho dgv
+                {
+                    dgvPlayList.DataSource = null;
+                    dgvPlayList.DataSource = songList;
+                    changeOccurred = true;
+                    SaveSelectedPlayList();
+                }
             }
         }
-
+        //Nút xóa bài hát
         private void btnRemoveSong_Click(object sender, EventArgs e)
         {
+            if (currentPlayList != null && currentPlayList.Name == "List Songs Root")
+            {
+                MessageBox.Show("Không thể xóa bài hát khỏi playlist mặc định 'List Songs Root'.",
+                                "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             if (dgvPlayList.SelectedRows.Count > 0)
             {
                 DataGridViewRow selectedRow = dgvPlayList.SelectedRows[0];
@@ -75,87 +182,94 @@ namespace TrinhPhatNhac
                     songList.Remove((Song)song);
                     dgvPlayList.DataSource = null;
                     dgvPlayList.DataSource = songList;
+                    changeOccurred = true;
+                    SaveSelectedPlayList();
                 }
             }
         }
-        #endregion
-        private void PlaylistForm_Load(object sender, EventArgs e)
+        //Nút tìm kiếm bài hát
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
-            //dgvPlayList.DataSource=currentList.ConvertToList();
-        }
-
-        private List<Song> FindSongs(string searchKeyword)
-        {
-            List<Song> foundSongs = new List<Song>();
-            if (string.IsNullOrEmpty(searchKeyword))
-                return foundSongs;
-            foreach (Song song in songList)
-            {
-                if ((song.SongName != null && song.SongName.ToLower().Contains(searchKeyword))
-                    || (song.SingerName != null && song.SingerName.ToLower().Contains(searchKeyword)))
-                {
-                    foundSongs.Add(song);
-                }
-            }
-            return foundSongs;
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            string keyword = txtFindSongs.Text.Trim().ToLower();
+            this.Focus();//chuyển tiêu điểm khỏi ô tìm kiếm và đặt nó lên chính playlistForm này
+            string keyword = txtThanhTimKiem.Text.Trim().ToLower();
+            dgvPlayList.DataSource = null;
             if (string.IsNullOrEmpty(keyword))
+            {
                 dgvPlayList.DataSource = songList;
+                MessageBox.Show("Tên bài hát không được để trống", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             else
             {
                 List<Song> foundSongs = FindSongs(keyword);
                 dgvPlayList.DataSource = foundSongs;
+                if (foundSongs.Count == 0)
+                {
+                    MessageBox.Show($"Không tìm thấy bài hát nào với từ khóa '{keyword}'",
+                        "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
-
-        private int GetSelectedRowIndex()
-        {
-            if (dgvPlayList.SelectedRows.Count == 1)
-                return dgvPlayList.SelectedRows[0].Index;
-            return -1;
-        }
-        private void SwapSong(List<Song> list, int indexA, int indexB)
-        {
-            Song song = list[indexA];
-            list[indexA] = list[indexB];
-            list[indexB] = song;
-        }
+        #endregion
 
         private void btnMoveUp_Click(object sender, EventArgs e)
         {
-            int selectedIndex = GetSelectedRowIndex();
+            if (dgvPlayList.SelectedRows.Count == 0 || currentPlayList == null)
+            {
+                MessageBox.Show("Vui lòng chọn một bài hát.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Lấy chỉ mục của bài hát đang được chọn
+            int selectedIndex = dgvPlayList.SelectedRows[0].Index;
+
+            // Kiểm tra xem bài hát đã ở vị trí đầu tiên chưa
             if (selectedIndex > 0)
             {
-                SwapSong(songList, selectedIndex, selectedIndex - 1);
+                int newIndex = selectedIndex - 1;
 
-                dgvPlayList.DataSource = null;
-                dgvPlayList.DataSource = songList;
+                // Hoán đổi vị trí trong danh sách tạm thời (songList)
+                SwapSongs(songList, selectedIndex, newIndex);
 
-				//Bỏ chọn tất cả các hàng
-				dgvPlayList.ClearSelection();
-				//Trỏ lại chỗ được chọn
-				dgvPlayList.Rows[selectedIndex - 1].Selected = true;
+                // Cập nhật giao diện DataGridView
+                RefreshPlaylistDisplay(newIndex);
+
+                // Đánh dấu có thay đổi
+                changeOccurred = true;
+
+                // LƯU LẠI THỨ TỰ MỚI VÀO FILE JSON
+                // Phương thức này sẽ đọc danh sách playlist gốc, tìm playlist hiện tại, 
+                // cập nhật lại PlayList của nó bằng songList mới, và lưu JSON.
+                SaveSelectedPlayList();
             }
         }
 
         private void btnMoveDown_Click(object sender, EventArgs e)
         {
-            int selectedIndex = GetSelectedRowIndex();
-            if (selectedIndex != -1 && selectedIndex < songList.Count - 1)
+            if (dgvPlayList.SelectedRows.Count == 0 || currentPlayList == null)
             {
-                SwapSong(songList, selectedIndex, selectedIndex + 1);
+                MessageBox.Show("Vui lòng chọn một bài hát.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
-                dgvPlayList.DataSource = null;
-                dgvPlayList.DataSource = songList;
+            // Lấy chỉ mục của bài hát đang được chọn
+            int selectedIndex = dgvPlayList.SelectedRows[0].Index;
 
-                //Bỏ chọn tất cả các hàng
-                dgvPlayList.ClearSelection();
-				//Trỏ lại chỗ được chọn
-				dgvPlayList.Rows[selectedIndex + 1].Selected = true;
+            // Kiểm tra xem bài hát đã ở vị trí cuối cùng chưa
+            if (selectedIndex < songList.Count - 1)
+            {
+                int newIndex = selectedIndex + 1;
+
+                // 1. Hoán đổi vị trí trong danh sách tạm thời (songList)
+                SwapSongs(songList, selectedIndex, newIndex);
+
+                // 2. Cập nhật giao diện DataGridView
+                RefreshPlaylistDisplay(newIndex);
+
+                // 3. Đánh dấu có thay đổi
+                changeOccurred = true;
+
+                // 4. LƯU LẠI THỨ TỰ MỚI VÀO FILE JSON
+                SaveSelectedPlayList();
             }
         }
     }
