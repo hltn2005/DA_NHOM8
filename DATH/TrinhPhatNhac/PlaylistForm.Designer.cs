@@ -93,6 +93,7 @@
             this.ColSongTime});
 			this.dgvPlayList.Location = new System.Drawing.Point(24, 81);
 			this.dgvPlayList.Name = "dgvPlayList";
+			this.dgvPlayList.ReadOnly = true;
 			this.dgvPlayList.RowHeadersWidth = 51;
 			this.dgvPlayList.RowTemplate.Height = 24;
 			this.dgvPlayList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -107,6 +108,7 @@
 			this.ColSongName.HeaderText = "Tên Bài Hát";
 			this.ColSongName.MinimumWidth = 6;
 			this.ColSongName.Name = "ColSongName";
+			this.ColSongName.ReadOnly = true;
 			// 
 			// ColSigerName
 			// 
@@ -116,6 +118,7 @@
 			this.ColSigerName.HeaderText = "Ca Sĩ";
 			this.ColSigerName.MinimumWidth = 6;
 			this.ColSigerName.Name = "ColSigerName";
+			this.ColSigerName.ReadOnly = true;
 			// 
 			// ColSongTime
 			// 
@@ -123,6 +126,7 @@
 			this.ColSongTime.HeaderText = "Thời Gian";
 			this.ColSongTime.MinimumWidth = 6;
 			this.ColSongTime.Name = "ColSongTime";
+			this.ColSongTime.ReadOnly = true;
 			// 
 			// lbl1
 			// 
