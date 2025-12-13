@@ -50,7 +50,6 @@
 			this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
 			this.ClientSize = new System.Drawing.Size(472, 443);
 			this.Controls.Add(this.btnLoadFile);
-			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
 			this.Name = "LoadFileForm";
 			this.Text = "Trình phát nhạc";
 			this.ResumeLayout(false);

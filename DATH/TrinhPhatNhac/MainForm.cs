@@ -545,7 +545,7 @@ namespace TrinhPhatNhac
             if (CheckSongList())
             {
                 DisplayAndPlay(songLinkedList.GetCurrentSong());
-
+                axWMP.Ctlcontrols.currentPosition = trackBar1.Value;
                 axWMP.Ctlcontrols.play();
             }
             else

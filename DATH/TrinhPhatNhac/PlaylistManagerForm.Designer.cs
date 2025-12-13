@@ -63,7 +63,6 @@
             this.ColSoLuongBaiHat});
 			this.dgvPlaylistManager.Location = new System.Drawing.Point(30, 52);
 			this.dgvPlaylistManager.Name = "dgvPlaylistManager";
-			this.dgvPlaylistManager.ReadOnly = true;
 			this.dgvPlaylistManager.RowHeadersWidth = 51;
 			this.dgvPlaylistManager.RowTemplate.Height = 24;
 			this.dgvPlaylistManager.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -77,7 +76,6 @@
 			this.ColTenPlaylist.HeaderText = "Tên Playlist";
 			this.ColTenPlaylist.MinimumWidth = 6;
 			this.ColTenPlaylist.Name = "ColTenPlaylist";
-			this.ColTenPlaylist.ReadOnly = true;
 			// 
 			// ColSoLuongBaiHat
 			// 
@@ -85,7 +83,6 @@
 			this.ColSoLuongBaiHat.HeaderText = "Số Lượng Bài Hát";
 			this.ColSoLuongBaiHat.MinimumWidth = 6;
 			this.ColSoLuongBaiHat.Name = "ColSoLuongBaiHat";
-			this.ColSoLuongBaiHat.ReadOnly = true;
 			// 
 			// btnEditPlaylist
 			// 
@@ -167,7 +164,6 @@
 			this.Controls.Add(this.btnEditPlaylist);
 			this.Controls.Add(this.btnCreatePlaylist);
 			this.Controls.Add(this.lblList);
-			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
 			this.Name = "PlaylistManagerForm";
 			this.Text = "PlaylistManagerForm";
 			this.Load += new System.EventHandler(this.PlaylistManagerForm_Load);
