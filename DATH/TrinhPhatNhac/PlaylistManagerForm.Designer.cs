@@ -164,6 +164,7 @@
 			this.Controls.Add(this.btnEditPlaylist);
 			this.Controls.Add(this.btnCreatePlaylist);
 			this.Controls.Add(this.lblList);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
 			this.Name = "PlaylistManagerForm";
 			this.Text = "PlaylistManagerForm";
 			this.Load += new System.EventHandler(this.PlaylistManagerForm_Load);
