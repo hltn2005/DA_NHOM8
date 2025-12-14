@@ -60,7 +60,7 @@ namespace TrinhPhatNhac
             image = imagesong;
             minute = minutesong;
         }
-        // GHI ĐÈ PHƯƠNG THỨC EQUALS
+        // Ghi đè phương thức Equals
         public override bool Equals(object obj)
         {
             if (obj == null || GetType() != obj.GetType())
@@ -74,7 +74,7 @@ namespace TrinhPhatNhac
             return this.FilePath == otherSong.FilePath;
         }
 
-        // GHI ĐÈ PHƯƠNG THỨC GETHASHCODE
+        // Ghi đè phương thức GETHASHCODE
         public override int GetHashCode()
         {
             // Dùng thuộc tính trong Equals để tính toán mã băm.

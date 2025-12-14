@@ -28,8 +28,8 @@ namespace TrinhPhatNhac
             {
                 if (folderDialog.ShowDialog() == DialogResult.OK)
                 {
-                    // lưu đường dẫn người dùng đã chọn vào setting
                     checkFolder= true;
+                    // lưu đường dẫn người dùng đã chọn vào setting
                     Properties.Settings.Default.SongFolderPath = folderDialog.SelectedPath;
                     Properties.Settings.Default.Save();
                     string folderPath = folderDialog.SelectedPath;// lấy đường dẫn vừa chọn

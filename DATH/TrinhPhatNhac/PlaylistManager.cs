@@ -13,11 +13,11 @@ namespace TrinhPhatNhac
 {
     public class PlaylistManager
     {
-        // tên file chứa dữ liệu playlist, dùng chung cho cả class
+        // Tên file chứa dữ liệu playlist, dùng chung cho cả class
         private static readonly string dataFile = "playlists.json";
-        // tên folder ứng dụng bên trong appdata, dùng chung cho cả class
+        // Tên folder ứng dụng bên trong appdata, dùng chung cho cả class
         private static readonly string appDataFolder = "TrinhPhatNhac";
-        // đừng dẫn đến file Json trong AppData
+        // Đừơng dẫn đến file Json trong AppData
         private static readonly string dataPath = Path.Combine(
             Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
             appDataFolder, dataFile);
@@ -66,17 +66,17 @@ namespace TrinhPhatNhac
         // Phương thức đọc file Json và trả về danh sách playlist
         public static List<PlaylistSong> LoadPlayList()
         {
-            if (!File.Exists(dataPath))// điều kiên nếu đường dẫn không tồn tại
+            if (!File.Exists(dataPath))// Điều kiện nếu đường dẫn không tồn tại
             {
                 return new List<PlaylistSong>();
             }
-            string jsonString = File.ReadAllText(dataPath);// đọc tất cả nội dung file thành chuỗi
-            //Chuyển chuỗi JSON → danh sách object PlayListSong
+            string jsonString = File.ReadAllText(dataPath);// Đọc tất cả nội dung file thành chuỗi
+            //Chuyển chuỗi JSON sang danh sách PlayListSong
             var playLists = JsonSerializer.Deserialize<List<PlaylistSong>>(jsonString);
 
             if (playLists != null)
             {
-                // CHUYỂN BASE64 SANG IMAGE SAU KHI TẢI
+                // Chuyển Base64 sang Image
                 foreach (var playlist in playLists)
                 {
                     foreach (var song in playlist.PlayList)
@@ -95,7 +95,7 @@ namespace TrinhPhatNhac
         {
             try
             {
-                // CẬP NHẬT IMAGEBASE64 TRƯỚC KHI LƯU 
+                // Cập nhật ImageBase64 trước khi lưu
                 foreach (var playlist in playLists)
                 {
                     foreach (var song in playlist.PlayList)
@@ -106,10 +106,10 @@ namespace TrinhPhatNhac
                         }
                     }
                 }
-                Directory.CreateDirectory(Path.GetDirectoryName(dataPath));// tạo đường dẫn đến thư mục
+                Directory.CreateDirectory(Path.GetDirectoryName(dataPath));// Tạo đường dẫn đến thư mục
                 string jsonString = JsonSerializer.Serialize(playLists,
-                    new JsonSerializerOptions { WriteIndented = true });////Serialize() → biến list thành chuỗi JSON.
-                File.WriteAllText(dataPath, jsonString);// tạo format đẹp, dễ đọc
+                    new JsonSerializerOptions { WriteIndented = true });//Serialize() → biến list thành chuỗi JSON.
+                File.WriteAllText(dataPath, jsonString);// Tạo format đẹp, dễ đọc
             }
             catch (Exception ex)
             {

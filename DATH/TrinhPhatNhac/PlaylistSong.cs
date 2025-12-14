@@ -26,7 +26,7 @@ namespace TrinhPhatNhac
             set { playList = value; }
         }
         #endregion
-        // phương thức trả về số lượn bài hát
+        // Phương thức trả về số lượn bài hát
         public int SongCount
         {
             get

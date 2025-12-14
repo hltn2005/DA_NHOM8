@@ -28,7 +28,7 @@ namespace TrinhPhatNhac
             txtNewName.SelectionStart = txtNewName.Text.Length;
             txtNewName.Focus();
         }
-
+        //Nút lưu tên mới playlist
         private void btnSave_Click(object sender, EventArgs e)
         {
             // Kiểm tra tên rỗng cơ bản trước khi đóng Form

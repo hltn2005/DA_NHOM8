@@ -272,8 +272,6 @@ namespace TrinhPhatNhac
                     default:
                         return;
                 }
-
-                // Tắt Check cho tất cả mục và chỉ Check mục được chọn 
                 // Lặp qua ContextMenuStrip chứa các mục 
                 // Dùng ContextMenuStrip của Form để truy cập
                 ContextMenuStrip cms = selectedItem.Owner as ContextMenuStrip;
@@ -288,13 +286,13 @@ namespace TrinhPhatNhac
                     }
                 }
 
-                // 3. Áp dụng tốc độ mới cho WMP Control
+                // Áp dụng tốc độ mới cho WMP Control
                 if (axWMP != null)
                 {
                     axWMP.settings.rate = newRate;
                 }
 
-                // 4. Cập nhật biến theo dõi và Text hiển thị trên nút chính 
+                // Cập nhật biến theo dõi và Text hiển thị trên nút chính 
                 playbackRate = newRate;
                 btnSpeed.Text = $"Tốc đô phát: {newRate}x";
 
@@ -373,9 +371,9 @@ namespace TrinhPhatNhac
 
                 OpenPlaylist.ShowDialog();
 
-                // XỬ LÝ KẾT QUẢ VÀ KHÔI PHỤC TRẠNG THÁI
+                // Xử lý kết quả và khôi phục trạng thái
 
-                // Lấy cờ báo hiệu thay đổi nội dung (thêm/xóa bài)
+                // Lấy cờ báo hiệu khi thay đổi nội dung (thêm/xóa bài)
                 bool playlistContentChanged = OpenPlaylist.ChangeOccurred;
 
                 if (OpenPlaylist.CurrentPlaylist != null && OpenPlaylist.CurrentPlaylist != currentPlaylist)
@@ -418,7 +416,7 @@ namespace TrinhPhatNhac
         // Nút xem danh sách playlist
         private void btnPlaylistManager_Click(object sender, EventArgs e)
         {
-            // LƯU TRẠNG THÁI HIỆN TẠI, TRƯỚC KHI MỞ FORM 
+            // Lưu trạng thai hiện tại khi mở form
             Song previousSong = (songLinkedList != null) ? songLinkedList.GetCurrentSong() : null;
             double previousPosition = 0;
             bool wasPlaying = false;
@@ -455,7 +453,7 @@ namespace TrinhPhatNhac
                     playlistChanged = true;
                 }
 
-                // KHÔI PHỤC TRẠNG THÁI SAU KHI FORM CON ĐÓNG
+                // Khôi phục trạng thái sau khi form con đóng
 
                 // Nếu Playlist thay đổi, chúng ta dùng UpdatePlayList() như cũ để tải bài đầu tiên
                 if (playlistChanged)
@@ -482,10 +480,10 @@ namespace TrinhPhatNhac
                 axWMP.settings.rate = playbackRate;
             }
         }
-        //nut menu
+        //Nút menu
         private void btnMenu_Click(object sender, EventArgs e)
         {
-            // LƯU TRẠNG THÁI HIỆN TẠI 
+            // Lưu trạng thái hiện tại
             Song previousSong = (songLinkedList != null) ? songLinkedList.GetCurrentSong() : null;
             double previousPosition = 0;
             bool wasPlaying = false;
@@ -514,7 +512,7 @@ namespace TrinhPhatNhac
                     pathChanged = true;
                 }
 
-                // KHÔI PHỤC TRẠNG THÁI SAU KHI FORM ĐÓNG
+                // Khôi phục trạng thái sau khi form con đóng
                 if (pathChanged)
                 {
                     // Nếu có folder mới, bắt đầu phát bài đầu tiên nếu trước đó đang phát
@@ -637,7 +635,6 @@ namespace TrinhPhatNhac
         //Nút phát nhạc ngẫu nhiên
         private void btnShuffle_Click(object sender, EventArgs e)
         {
-            btnShuffle.BackColor = Color.Green;
             shuffle = !shuffle;
             if (shuffle)
             {
@@ -664,7 +661,7 @@ namespace TrinhPhatNhac
             trackBar2_Scroll(sender, e);
             axWMP.settings.rate = playbackRate;
             btnSpeed.Text = "Tốc độ phát: 1.0x";
-            // kiểm tra tồn tại của đường dẫn tới folder chưa bài hát trước khi hiện form
+            // Kiểm tra tồn tại của đường dẫn tới folder chưa bài hát trước khi hiện form
             if (Properties.Settings.Default.SongFolderPath != null)
             {
                 string folderPath = Properties.Settings.Default.SongFolderPath;

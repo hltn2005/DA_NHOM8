@@ -29,7 +29,7 @@ namespace TrinhPhatNhac
             {
                 head = tail = current = null;
             }
-            public void AddLast(string file) // phương thúc thêm cuối path 
+            public void AddLast(string file) // Phương thúc thêm cuối path 
             {
                 PathNode newNode = new PathNode(file);
                 if (head == null)
@@ -43,7 +43,7 @@ namespace TrinhPhatNhac
                     tail = newNode;
                 }
             }
-            public string GetCurrentPath()// phương thức lấy path hiện tại
+            public string GetCurrentPath()// Phương thức lấy path hiện tại
             {
                 if (current != null)
                 {
@@ -54,7 +54,7 @@ namespace TrinhPhatNhac
                     return null;
                 }
             }
-            public string NextPath()// phương thức lấy path kế
+            public string NextPath()// Phương thức lấy path kế
             {
                 if (current == null)
                 {
@@ -71,7 +71,7 @@ namespace TrinhPhatNhac
                     return null;
                 }
             }
-            public void ResetPos()// phương thức reset Node
+            public void ResetPos()// Phương thức reset Node
             {
                 current = head;
             }

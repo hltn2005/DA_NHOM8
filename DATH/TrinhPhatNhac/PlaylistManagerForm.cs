@@ -26,7 +26,7 @@ namespace TrinhPhatNhac
             dgvPlaylistManager.DataSource = playLists;
 
         }
-        // property dữ liệu của selectedPlayList
+        // Property gán và trả về playlist đã chọn
         public PlaylistSong SelectedPlayList
         {
             get { return selectedPlayList; }
@@ -168,7 +168,6 @@ namespace TrinhPhatNhac
                 {
                     return;
                 }
-
                 // KIỂM TRA TRÙNG TÊN 
                 bool nameAlreadyExists = false;
                 foreach (var playlist in playLists)
@@ -181,19 +180,16 @@ namespace TrinhPhatNhac
                         break;
                     }
                 }
-
                 if (nameAlreadyExists)
                 {
                     MessageBox.Show($"Tên playlist '{newName}' đã tồn tại.", "Lỗi",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-
                 // CẬP NHẬT TÊN VÀ LƯU
                 DialogResult result = MessageBox.Show(
                     $"Bạn có chắc muốn đổi tên playlist từ '{oldPlaylistName}' thành '{newName}' không?",
                     "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
                 if (result == DialogResult.Yes)
                 {
                     playlistToUpdate.Name = newName;

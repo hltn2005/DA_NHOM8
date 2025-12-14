@@ -113,7 +113,7 @@
 			this.Controls.Add(this.dgvAddSong);
 			this.Name = "AddSongForm";
 			this.Text = "AddSongForm";
-			this.Load += new System.EventHandler(this.AddSongForm_Load);
+			
 			((System.ComponentModel.ISupportInitialize)(this.dgvAddSong)).EndInit();
 			this.ResumeLayout(false);
 

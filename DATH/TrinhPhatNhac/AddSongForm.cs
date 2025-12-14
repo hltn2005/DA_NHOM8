@@ -29,6 +29,7 @@ namespace TrinhPhatNhac
             dgvAddSong.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
+        // Nút thêm các bài hát đã chọn cho playlist
         private void btnThem_Click(object sender, EventArgs e)
         {
             int songSelected=0;
@@ -56,14 +57,11 @@ namespace TrinhPhatNhac
 
             this.Close();
         }
+        // Phương thức kiểm tra 
         public bool CheckSelect()
         {
             return checkList;
         }
 
-        private void AddSongForm_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

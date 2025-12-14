@@ -30,7 +30,7 @@ namespace TrinhPhatNhac
             {
                 head = tail = current = null;
             }
-            public void AddLast(Song Song)// phương thức thêm cuối bài hát
+            public void AddLast(Song Song)// Phương thức thêm cuối bài hát
             {
                 SongNode newNode = new SongNode(Song);
                 if (head == null)
@@ -49,7 +49,7 @@ namespace TrinhPhatNhac
                 }
 
             }
-            public Song GetCurrentSong()// phương thức lấy bài hát đầu tiên
+            public Song GetCurrentSong()// Phương thức lấy bài hát đầu tiên
             {
                 if (current != null)
                     return current.song;
@@ -58,7 +58,7 @@ namespace TrinhPhatNhac
                     return null;
                 }
             }
-            public Song NextSong()// phương thức lấy bài hát kế
+            public Song NextSong()// Phương thức lấy bài hát kế
             {
                 if (current != null)
                 {
@@ -67,7 +67,7 @@ namespace TrinhPhatNhac
                 }
                 else { return null; }
             }
-            public Song PrevSong()// phương thức lấy bài hát trước
+            public Song PrevSong()// Phương thức lấy bài hát trước
             {
                 if (current != null)
                 {
@@ -76,7 +76,7 @@ namespace TrinhPhatNhac
                 }
                 else { return null; }
             }
-            public void ResetSong()// hàm reset lại Node
+            public void ResetSong()// Hàm reset lại Node
             {
                 current = head;
             }

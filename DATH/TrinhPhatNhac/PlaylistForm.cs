@@ -97,16 +97,6 @@ namespace TrinhPhatNhac
             }
             return foundSongs;
         }
-        //Phương thức lấy sư kiên nút enter
-        private void PlaylistForm_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                // Ngăn hệ thống xử lý phím Enter
-                e.SuppressKeyPress = true;
-                e.Handled = true;
-            }
-        }
         //Phương thức hoán đổi vị trí trong List<Song>
         private void SwapSongs(List<Song> list, int indexA, int indexB)
         {
@@ -209,8 +199,7 @@ namespace TrinhPhatNhac
                 }
             }
         }
-        #endregion
-
+        //Nút di chuyển lên
         private void btnMoveUp_Click(object sender, EventArgs e)
         {
             if (dgvPlayList.SelectedRows.Count == 0 || currentPlayList == null)
@@ -226,23 +215,17 @@ namespace TrinhPhatNhac
             if (selectedIndex > 0)
             {
                 int newIndex = selectedIndex - 1;
-
                 // Hoán đổi vị trí trong danh sách tạm thời (songList)
                 SwapSongs(songList, selectedIndex, newIndex);
 
                 // Cập nhật giao diện DataGridView
                 RefreshPlaylistDisplay(newIndex);
-
                 // Đánh dấu có thay đổi
                 changeOccurred = true;
-
-                // LƯU LẠI THỨ TỰ MỚI VÀO FILE JSON
-                // Phương thức này sẽ đọc danh sách playlist gốc, tìm playlist hiện tại, 
-                // cập nhật lại PlayList của nó bằng songList mới, và lưu JSON.
                 SaveSelectedPlayList();
             }
         }
-
+        // Nút di chuyển xuống
         private void btnMoveDown_Click(object sender, EventArgs e)
         {
             if (dgvPlayList.SelectedRows.Count == 0 || currentPlayList == null)
@@ -258,19 +241,15 @@ namespace TrinhPhatNhac
             if (selectedIndex < songList.Count - 1)
             {
                 int newIndex = selectedIndex + 1;
-
-                // 1. Hoán đổi vị trí trong danh sách tạm thời (songList)
+                // Hoán đổi vị trí trong danh sách tạm thời (songList)
                 SwapSongs(songList, selectedIndex, newIndex);
-
-                // 2. Cập nhật giao diện DataGridView
+                // Cập nhật giao diện DataGridView
                 RefreshPlaylistDisplay(newIndex);
-
-                // 3. Đánh dấu có thay đổi
+                // Đánh dấu có thay đổi
                 changeOccurred = true;
-
-                // 4. LƯU LẠI THỨ TỰ MỚI VÀO FILE JSON
                 SaveSelectedPlayList();
             }
         }
+        #endregion
     }
 }
