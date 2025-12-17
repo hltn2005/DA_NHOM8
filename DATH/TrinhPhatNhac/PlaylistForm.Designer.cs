@@ -224,7 +224,6 @@
             this.Controls.Add(this.txtThanhTimKiem);
             this.Name = "PlaylistForm";
             this.Text = "PlaylistForm";
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PlaylistForm_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlayList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
