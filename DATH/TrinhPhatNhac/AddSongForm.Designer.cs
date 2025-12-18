@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.dgvAddSong = new System.Windows.Forms.DataGridView();
 			this.ColSongName = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.ColSongTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,14 +44,14 @@
 			this.dgvAddSong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.dgvAddSong.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
 			this.dgvAddSong.BackgroundColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ActiveCaption;
-			dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-			dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-			dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-			dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.dgvAddSong.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+			dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+			dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dgvAddSong.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
 			this.dgvAddSong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvAddSong.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColSongName,
@@ -59,6 +59,7 @@
             this.ColSingerName});
 			this.dgvAddSong.Location = new System.Drawing.Point(12, 12);
 			this.dgvAddSong.Name = "dgvAddSong";
+			this.dgvAddSong.ReadOnly = true;
 			this.dgvAddSong.RowHeadersWidth = 51;
 			this.dgvAddSong.RowTemplate.Height = 24;
 			this.dgvAddSong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -68,11 +69,12 @@
 			// ColSongName
 			// 
 			this.ColSongName.DataPropertyName = "SongName";
-			dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.ColSongName.DefaultCellStyle = dataGridViewCellStyle5;
+			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.ColSongName.DefaultCellStyle = dataGridViewCellStyle2;
 			this.ColSongName.HeaderText = "Tên Bài Hát";
 			this.ColSongName.MinimumWidth = 6;
 			this.ColSongName.Name = "ColSongName";
+			this.ColSongName.ReadOnly = true;
 			// 
 			// ColSongTime
 			// 
@@ -80,15 +82,17 @@
 			this.ColSongTime.HeaderText = "Thời Gian";
 			this.ColSongTime.MinimumWidth = 6;
 			this.ColSongTime.Name = "ColSongTime";
+			this.ColSongTime.ReadOnly = true;
 			// 
 			// ColSingerName
 			// 
 			this.ColSingerName.DataPropertyName = "SingerName";
-			dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.ColSingerName.DefaultCellStyle = dataGridViewCellStyle6;
+			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.ColSingerName.DefaultCellStyle = dataGridViewCellStyle3;
 			this.ColSingerName.HeaderText = "Ca Sĩ";
 			this.ColSingerName.MinimumWidth = 6;
 			this.ColSingerName.Name = "ColSingerName";
+			this.ColSingerName.ReadOnly = true;
 			// 
 			// btnThem
 			// 
@@ -111,9 +115,9 @@
 			this.ClientSize = new System.Drawing.Size(712, 512);
 			this.Controls.Add(this.btnThem);
 			this.Controls.Add(this.dgvAddSong);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
 			this.Name = "AddSongForm";
 			this.Text = "AddSongForm";
-			
 			((System.ComponentModel.ISupportInitialize)(this.dgvAddSong)).EndInit();
 			this.ResumeLayout(false);
 

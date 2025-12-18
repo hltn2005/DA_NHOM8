@@ -70,6 +70,7 @@
 			this.Controls.Add(this.btnSave);
 			this.Controls.Add(this.txtNewName);
 			this.Controls.Add(this.label1);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
 			this.Name = "RenamePlaylistForm";
 			this.Text = "RenamePlaylistForm";
 			this.ResumeLayout(false);

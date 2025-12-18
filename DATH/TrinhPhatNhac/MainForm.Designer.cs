@@ -418,6 +418,7 @@
 			this.Controls.Add(this.lblSinger);
 			this.Controls.Add(this.lblNameSong);
 			this.Controls.Add(this.lblPlaying);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
 			this.Name = "MainForm";
 			this.Text = "Trình phát nhạc";
 			this.Load += new System.EventHandler(this.MainForm_Load);
